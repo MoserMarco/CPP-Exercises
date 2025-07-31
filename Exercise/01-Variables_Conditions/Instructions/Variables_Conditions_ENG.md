@@ -3,17 +3,27 @@
 ## 01 – Sum of Two Numbers
 The user enters two numbers. The program must calculate their sum and display the result.
 
+---
+
 ## 02 – Even or Odd
 The user enters a number, and the program determines whether it is even or odd.
+
+---
 
 ## 03 – Average Calculation
 The user enters three numbers. The program calculates their average and prints it.
 
+---
+
 ## 04 – Age Verification
 The user enters a person's age, and the program checks whether it is greater than 18.
 
+---
+
 ## 05 – Rectangle Area
 The user enters the base and height. The program calculates and displays the area and perimeter of the rectangle.
+
+---
 
 ## 06 – Special Numbers 
 The user enters a number **X**. The program must check the following:
@@ -25,6 +35,8 @@ The user enters a number **X**. The program must check the following:
     - Otherwise, check if it is less than **5**:
         - If yes, print "Odd number less than 5"
         - Otherwise, print "Odd number between 5 and 15"
+
+---
 
 ## 07 – Number Evaluation 
 Ask the user to enter **three integers**: **A, B, C**.
@@ -40,6 +52,8 @@ Check the following:
         - If yes, print "B > C but not a multiple of 3"
         - Otherwise, print "B ≤ C and not a multiple of 3"
 
+---
+
 ## 08 – Days of the Week 
 The user enters a number from **1 to 7**. The program prints the corresponding day:
 - 1 → Monday
@@ -48,10 +62,14 @@ The user enters a number from **1 to 7**. The program prints the corresponding d
 - 7 → Sunday
   If the number is outside the valid range, print "Invalid number".
 
+---
+
 ## 09 – Simple Calculator 
 The user enters two numbers and a character representing a math operation: `+`, `-`, `*`, `/`.
 Use a `switch` to execute the operation and display the result.
 If the operation is not recognized, print "Invalid operation".
+
+---
 
 ## 10 – Complete User Check 
 
