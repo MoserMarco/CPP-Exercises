@@ -25,7 +25,18 @@ The user enters the base and height. The program calculates and displays the are
 
 ---
 
-## 06 – Special Numbers 
+## 06 - Net Price
+The user enters the price of a product and a discount percentage.
+The program checks whether the discount is valid (between 1% and 99% inclusive).
+If the discount is valid, it calculates the final price after applying the discount.
+If not, it displays the message: 
+
+```Invalid discount input```
+
+---
+
+
+## 07 – Special Numbers 
 The user enters a number **X**. The program must check the following:
 - If **X is even**, check if it is divisible by **6**:
     - If yes, print "Valid number"
@@ -38,7 +49,31 @@ The user enters a number **X**. The program must check the following:
 
 ---
 
-## 07 – Number Evaluation 
+## 08 – Intersection Between Two Lines
+Write a program that calculates the point of intersection between two lines in the Cartesian plane, given in implicit form.
+
+The user must input 6 real numbers, corresponding to the coefficients of the two lines in the form:
+
+
+```
+a₁x + b₁y = c₁  
+a₂x + b₂y = c₂
+```
+Required Input:
+- a₁: coefficient of x in the first line
+- b₁: coefficient of y in the first line
+- c₁: constant term of the first line
+- a₂: coefficient of x in the second line
+- b₂: coefficient of y in the second line
+- c₂: constant term of the second line
+
+
+###  Tip:
+
+Use Cramer's Rule to solve the system of equations.
+
+---
+## 09 – Number Evaluation 
 Ask the user to enter **three integers**: **A, B, C**.
 Check the following:
 - If **A is greater than B**, check if **C is even**:
@@ -54,7 +89,7 @@ Check the following:
 
 ---
 
-## 08 – Days of the Week 
+## 10 – Days of the Week 
 The user enters a number from **1 to 7**. The program prints the corresponding day:
 - 1 → Monday
 - 2 → Tuesday
@@ -64,14 +99,14 @@ The user enters a number from **1 to 7**. The program prints the corresponding d
 
 ---
 
-## 09 – Simple Calculator 
+## 11 – Simple Calculator 
 The user enters two numbers and a character representing a math operation: `+`, `-`, `*`, `/`.
 Use a `switch` to execute the operation and display the result.
 If the operation is not recognized, print "Invalid operation".
 
 ---
 
-## 10 – Complete User Check 
+## 12 – Complete User Check 
 
 Write a program that asks the user for:
 

@@ -25,7 +25,12 @@ l'utente inserisce la base e l'altezza, il programma calcola l'area e il perimet
 
 ---
 
-## 06 – Numeri Speciali 
+## 06 - Prezzo netto
+L'utente inserisce il prezzo di un prodotto e lo sconto in percentuale, il programma verifica che lo sconto sia accettabile (compreso tra 1 e 99).
+Se lo sconto e corretto calcola il prezzo del prodotto applicando lo sconto, se lo sconto non e' corretto stampa: ```Inseriemento dello sconto errato```
+
+
+## 07 – Numeri Speciali 
 L’utente inserisce un numero **X**. Il programma deve controllare le seguenti condizioni:
 - Se **X è pari**, controlla se è divisibile per **6**:
     - Se sì, stampa "Numero valido"
@@ -38,7 +43,30 @@ L’utente inserisce un numero **X**. Il programma deve controllare le seguenti 
 
 ---
 
-## 07 – Valutazione dei Numeri 
+## 08 – Intersezione tra due rette
+Scrivi un programma che calcoli il punto di intersezione tra due rette nel piano cartesiano, date in forma implicita.
+
+L’utente deve inserire 6 numeri reali, corrispondenti ai coefficienti delle due rette nella forma:
+
+```
+a₁x + b₁y = c₁  
+a₂x + b₂y = c₂
+```
+Input richiesto: 
+- a₁: coefficiente della x nella prima retta
+- b₁: coefficiente della y nella prima retta
+- c₁: termine noto della prima retta
+- a₂: coefficiente della x nella seconda retta
+- b₂: coefficiente della y nella seconda retta
+- c₂: termine noto della seconda retta
+
+
+### Consiglio:
+
+Usa il metodo di Kramer per risolvere il sistema
+
+---
+## 09 – Valutazione dei Numeri 
 Chiedi all’utente di inserire **tre numeri interi**: **A, B, C**.
 Controlla le seguenti condizioni:
 - Se **A è maggiore di B**, controlla se **C è pari**:
@@ -54,7 +82,7 @@ Controlla le seguenti condizioni:
 
 ---
 
-## 08 – Giorni della Settimana 
+## 10 – Giorni della Settimana 
 L’utente inserisce un numero da **1 a 7**. Il programma stampa il giorno corrispondente:
 - 1 → Lunedì
 - 2 → Martedì
@@ -64,14 +92,14 @@ L’utente inserisce un numero da **1 a 7**. Il programma stampa il giorno corri
 
 ---
 
-## 09 – Calcolatrice Semplice 
+## 11 – Calcolatrice Semplice 
 L’utente inserisce due numeri e un carattere che rappresenta un’operazione matematica: `+`, `-`, `*`, `/`.
 Usa uno `switch` per eseguire l’operazione corrispondente e mostra il risultato.
 Se l’operazione non è riconosciuta, stampa "Operazione non valida".
 
 ---
 
-## 10 – Controllo Completo Utente 
+## 12 – Controllo Completo Utente 
 
 Scrivi un programma che chieda all’utente:
 
