@@ -163,3 +163,22 @@ Dato un numero intero positivo **n**, la sequenza di Collatz è definita così:
 **Curiosità:**  
 Non è mai stato trovato un numero che genera una serie di Collatz infinita.  
 Prova a modificare il programma per stampare la serie di Collatz per i **primi 100 numeri naturali**: tutte saranno finite.
+---
+## 18 – Serie di Fibonacci
+Scrivi un programma che chiede all’utente un numero intero positivo n e stampa la serie di Fibonacci fino all’n-esimo termine.
+
+**Spiegazione della serie di Fibonacci**
+È una sequenza di numeri in cui ogni numero è la somma dei due precedenti, con i primi due termini uguali a 0 e 1.
+
+Formula:
+```
+F(0) = 0  
+F(1) = 1  
+F(n) = F(n-1) + F(n-2)
+```
+
+**Esempio per n = 8**
+```
+Serie di Fibonacci: 0 1 1 2 3 5 8 13
+```
+---

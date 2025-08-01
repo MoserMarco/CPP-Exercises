@@ -166,3 +166,22 @@ Given a positive integer **n**, the Collatz sequence is defined as follows:
 **Fun fact:**  
 No number has ever been found that produces an infinite Collatz sequence.  
 Try modifying the program to print the Collatz sequence for the **first 100 natural numbers**: all will end.
+
+---
+## 18 – Fibonacci Series
+Write a program that asks the user for a positive integer n and prints the Fibonacci series up to the n-th term.
+
+**Explanation of the Fibonacci Series**
+It is a sequence of numbers where each number is the sum of the two preceding ones, with the first two terms being 0 and 1.
+Formula:
+```
+F(0) = 0  
+F(1) = 1  
+F(n) = F(n-1) + F(n-2)
+```
+
+**Example for n = 8**
+```
+Fibonacci Series: 0 1 1 2 3 5 8 13
+```
+---

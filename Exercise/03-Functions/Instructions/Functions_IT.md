@@ -1,28 +1,34 @@
-# 📘 Esercizi – Funzioni
+# Esercizi - Funzioni
 
-## 01 – Rettangolo di asterischi
+## 01 - Rettangolo di asterischi
 
 ### Descrizione
-Scrivi una funzione che, data base e altezza, stampa un rettangolo con asterischi.
+
+Scrivi una funzione che, data una base e un'altezza, stampa un rettangolo con asterischi.
 
 ### Prototipo della funzione
+
 ```cpp
-void stampaRettangolo(int base, int altezza);
+void asteriskRectangle(int base, int height);
 ```
 
 ### Parametri
+
 - **base**: base del rettangolo
-- **altezza**: altezza del rettangolo
+- **height**: altezza del rettangolo
 
 ### Valore di ritorno
+
 Nessuno
 
 ### Esempio
+
 ```cpp
-stampaRettangolo(3, 4);
+asteriskRectangle(3, 4);
 ```
 
-**Output:**
+### Output:
+
 ```
 ***
 * *
@@ -30,121 +36,135 @@ stampaRettangolo(3, 4);
 ***
 ```
 
----
+-----
 
-
-## 02 – Elevamento a potenza
+## 02 - Elevamento a potenza
 
 ### Descrizione
+
 Scrivi una funzione che calcoli la potenza di un numero intero elevato a un esponente positivo.
 
 ### Prototipo della funzione
+
 ```cpp
-int potenza(int base, int esponente);
+int exponentiation(int base, int exponent);
 ```
 
 ### Parametri
+
 - **base**: numero da elevare
-- **esponente**: esponente (positivo)
+- **exponent**: esponente (positivo)
 
 ### Valore di ritorno
-- Risultato del calcolo `base ^ esponente`
+
+- Risultato del calcolo `base ^ exponent`
 
 ### Esempio
+
 ```cpp
-potenza(2, 4);
+exponentiation(2, 4);
 ```
 
-**Output:**
+### Output:
+
 ```
 16
 ```
 
----
+-----
 
-## 03 - Numero pari o dispari (passaggio per valore)
+## 03 - Numero pari o dispari
 
-**Descrizione:**
-Scrivi una funzione `isPari(int n)` che ritorni `true` se `n` è pari, altrimenti ritorni `false`. Nel `main()`, chiedi un numero all'utente e stampa il risultato.
+### Descrizione:
 
-**Prototipo della funzione:**
+Scrivi una funzione `isEven(int n)` che ritorni `true` se `n` è pari, altrimenti ritorni `false`.
+
+### Prototipo della funzione:
 
 ```cpp
-bool isPari(int n);
+bool isEven(int n);
 ```
 
-**Parametri:**
+### Parametri:
 
 * `n`: numero intero da verificare
 
-**Valore di ritorno:**
+### Valore di ritorno:
 
 * `true` se il numero è pari
 * `false` se il numero è dispari
 
-**Esempio:**
+### Esempio:
 
 ```cpp
-Inserisci un numero: 7
-Dispari
+cout<< isEven(7);
+//output: 0 (false)
 ```
 
----
+-----
 
-## 04 – Differenza tra massimo e minimo
+## 04 - Differenza tra massimo e minimo
 
 ### Descrizione
+
 Scrivi una funzione che riceve tre numeri interi e restituisce la differenza tra il più grande e il più piccolo.
 
 ### Prototipo della funzione
+
 ```cpp
-int differenza(int n1, int n2, int n3);
+int difference(int n1, int n2, int n3);
 ```
 
 ### Parametri
+
 - **n1**: primo numero
 - **n2**: secondo numero
 - **n3**: terzo numero
 
 ### Valore di ritorno
+
 - Differenza tra il massimo e il minimo dei tre numeri
 
 ### Esempio
+
 ```cpp
-differenza(6, 12, 2);
+cout<< difference(6, 12, 2);
+//output: 10
 ```
 
-**Output:**
-```
-10
-```
 
----
+
+-----
 
 ## 05 - Stampa numeri con invio
 
-**Descrizione:**
+### Descrizione:
+
 La funzione controlla se `n` è minore o uguale o maggiore di 10. Se `n <= 10`, stampa tutti i numeri da `1` a `n-1` andando a capo ogni due numeri. Se `n > 10`, stampa tutti i numeri da `1` a `n-1` andando a capo ogni dieci numeri.
 
-**Prototipo della funzione:**
+### Prototipo della funzione:
 
 ```cpp
-void numeriConInvio(int n);
+void numbersWithNewlines(int n);
 ```
 
-**Parametri:**
+### Parametri:
 
 * `n`: numero intero di riferimento
 
-**Valore di ritorno:**
+### Valore di ritorno:
 
 * Nessuno (stampa direttamente a terminale)
 
-**Esempio:**
+### Esempio:
 
 ```cpp
-numero(10)
-Output:
+numbersWithNewlines(10)
+```
+
+### Output:
+
+```
 1 2
 3 4
 5 6
@@ -152,190 +172,310 @@ Output:
 9
 ```
 
----
-Esercizio 2
-Implementa la funzione
-double perimetro(double x1, double y1, double x2, double y2, double x3, double y3)
-La funzione calcola il perimetro del triangolo. Implementa una funzione che calcola la distanza tra due punti.
+-----
 
----
+## 06 - Perimetro del triangolo
 
-## 06 - Numero primo con funzione
+### Descrizione:
 
-**Descrizione:**
-Scrivi una funzione `bool ePrimo(int n)` che ritorna `true` se il numero è primo, altrimenti `false`. Nel `main()`, chiedi un numero all'utente, richiama la funzione e stampa il risultato.
+Scrivi una funzione che calcola il perimetro di un triangolo dati i vertici nel piano cartesiano. Usa una funzione ausiliaria per calcolare la distanza tra due punti.
 
-**Prototipo della funzione:**
+### Prototipo delle funzioni:
 
 ```cpp
-bool ePrimo(int n);
+double distance(double x1, double y1, double x2, double y2);
+double perimeter(double x1, double y1, double x2, double y2, double x3, double y3);
 ```
 
-**Parametri:**
+### Parametri:
+
+- `x1`, `y1`: coordinate del primo punto
+- `x2`, `y2`: coordinate del secondo punto
+- `x3`, `y3`: coordinate del terzo punto
+
+### Valore di ritorno:
+
+Restituisce il perimetro del triangolo.
+
+### Esempio:
+
+```cpp
+perimeter(0, 0, 3, 0, 0, 4) // returns 12
+```
+
+-----
+
+## 07 - Numero primo con funzione
+
+### Descrizione:
+
+Scrivi una funzione `bool isPrime(int n)` che ritorna `true` se il numero è primo, altrimenti `false`.
+
+### Prototipo della funzione:
+
+```cpp
+bool isPrime(int n);
+```
+
+### Parametri:
 
 * `n`: numero da controllare
 
-**Valore di ritorno:**
+### Valore di ritorno:
 
 * `true` se il numero è primo
 * `false` se il numero non è primo
 
-**Esempio:**
+### Esempio:
 
 ```cpp
-Inserisci un numero: 28
-Il numero non è primo
+bool result = isPrime(28);
+cout<< result
+// result = 0 (False)
 ```
 
----
-Esercizio: 1
-Scrivi una funzione in C che, data un’intera positiva n, stampi a schermo la lettera Sigma maiuscola (Σ) utilizzando il carattere *.
-void satampaSigma(int n);
-La dimensione n rappresenta l’altezza e la lunghezza n sara’ sempre dispari e maggiore di 5. Esempio:
-n=5
-*****            [*][*][*][*][*]
-*                    [ ][*]
-*                   [ ][  ][*]
-*                    [ ][*]
-****              [*][*][*][*][*]
+-----
 
----
+## 08 - Stampa Sigma maiuscola
 
-## 07 - Calcolo del massimo comune divisore (MCD) (passaggio per valore e riferimento)
+### Descrizione:
 
-**Descrizione:**
-Scrivi una funzione `mcd(int a, int b, int &risultato)` che calcoli il massimo comune divisore usando l'algoritmo di Euclide.
+Scrivi una funzione che stampa una Sigma maiuscola (Σ) con altezza e larghezza `n`. `n` deve essere dispari e maggiore di 5.
 
-**Prototipo della funzione:**
+### Prototipo della funzione:
 
 ```cpp
-void mcd(int a, int b, int &risultato);
+void printSigma(int n);
 ```
 
-**Parametri:**
+### Parametri:
+
+- `n`: dimensione (altezza e larghezza) della Sigma
+
+\*\*Valore di ritorno:
+Nessuno
+
+### Esempio:
+
+```cpp
+printSigma(5);
+```
+
+### Output:
+
+```
+*****
+ *
+  *
+ *
+*****
+```
+
+-----
+
+## 09 - Calcolo del massimo comune divisore (GCD)
+
+### Descrizione:
+
+Scrivi una funzione `int gcd(int a, int b)` che calcoli il massimo comune divisore usando l'algoritmo di Euclide.
+
+### Prototipo della funzione:
+
+```cpp
+int GCD(int a, int b);
+```
+
+### Parametri:
 
 * `a`: primo numero (passato per valore)
 * `b`: secondo numero (passato per valore)
-* `risultato`: variabile dove verrà salvato il risultato (passato per riferimento)
 
-**Valore di ritorno:**
+### Valore di ritorno:
 
-* Nessuno (modifica la variabile `risultato` passata per riferimento)
+* il MCD calcolato
 
-**Esempio:**
+### Esempio:
 
 ```cpp
-Inserisci due numeri: 48 18
-MCD: 6
+int gcdVariable =  GCD(48, 18);
+cout << gcdVariable
+// output: 6
 ```
 
----
+-----
 
-## 08 - Calcolo del minimo comune multiplo (MCM)
+## 10 - Calcolo del minimo comune multiplo (MCM)
 
-**Descrizione:**
+### Descrizione:
+
 Calcola l'MCM tra due numeri interi utilizzando la formula:
+`LCM(a, b) = a * b / GCD(a, b)`
+Utilizza due funzioni: `int GCD(int a, int b);` e `int LCM(int a, int b);`.
 
-```text
-MCM(a, b) = a * b / MCD(a, b)
-```
-
-Utilizza due funzioni:
-
-* `int MCD(int a, int b);`
-* `int MCM(int a, int b);`
-
-**Prototipo delle funzioni:**
+### Prototipo delle funzioni:
 
 ```cpp
-int MCD(int a, int b);
-int MCM(int a, int b);
+int GCD(int a, int b);
+int LCM(int a, int b);
 ```
 
-**Parametri:**
+### Parametri:
 
 * `a`: primo numero
 * `b`: secondo numero
 
-**Valore di ritorno:**
+### Valore di ritorno:
 
-* `MCD()`: restituisce il massimo comune divisore tra `a` e `b`
-* `MCM()`: restituisce il minimo comune multiplo tra `a` e `b`
+* `GCD()`: restituisce il massimo comune divisore tra `a` e `b`
+* `LCM()`: restituisce il minimo comune multiplo tra `a` e `b`
 
-**Esempio:**
+### Esempio:
 
 ```cpp
-MCM(4, 6) // ritorna 12
+LCM(4, 6) // returns 12
 ```
----
 
-## 09 – Stampa una M maiuscola
+-----
+
+## 11 - Stampa una M maiuscola
 
 ### Descrizione
+
 Scrivi una funzione che stampa una **M maiuscola** data un'altezza.
 
 ### Prototipo della funzione
+
 ```cpp
-void stampaM(int altezza);
+void printM(int height);
 ```
 
 ### Parametri
-- **altezza**: altezza della M da stampare
+
+- **height**: altezza della M da stampare
 
 ### Valore di ritorno
+
 Nessuno
 
 ### Esempio
+
 ```cpp
-stampaM(5);
+printM(5);
 ```
 
-**Output:**
+### Output:
+
 ```
-*     *
-**   **
-* * * *
-*  *  *
-*     *
+*   *
+** **
+* * *
+*   *
+*   *
 ```
 
----
+-----
 
-Esercizio 7: Tavola pitagorica
-Scrivi un programma che chieda all'utente di inserire un numero intero positivo N e stampi la tavola pitagorica fino a N.
-Deve ritornare la somma dei prodotti calcolati
-prototipo: int tavolaPitagorica(int n)
-parametri:
-n: numero di cui si vuole stampare la tavola pitagorica
-ritorno:
-somma di tutti i numeri che formano la tavola pitagorica
-Esempio per N = 3:
+## 12 - Tavola pitagorica
+
+### Descrizione:
+
+Scrivi una funzione che stampa la tavola pitagorica fino a `n × n` e restituisce la somma dei prodotti.
+
+### Prototipo della funzione:
+
+```cpp
+int multiplicatioTable(int n);
+```
+
+### Parametri:
+
+- `n`: dimensione della tavola pitagorica
+
+### Valore di ritorno:
+
+Somma di tutti i prodotti calcolati nella tavola
+
+### Esempio:
+
+```cpp
+multiplicatioTable(3);
+```
+
+### Output:
+
+```
 1 2 3
 2 4 6
 3 6 9
+```
 
+**Valore ritornato:** `36`
 
+-----
 
+## 13 - Trasformazione numeri
 
-Esercizio 3: Trasformazione numeri.
-Scrivi una funzione che riceve per parametri due numeri dall'utente con la virgola e trasforma il minore dei due in 0 se è negativo e in 1 se è positivo e il maggiore trasforma nel suo reciproco.
-Prototipo: void trasformazione(float &n1, float &n2);
-Parametri:
-n1: primo numero
-n2: secondo numero
-esempio
-float n1=0.7, n2=1.5;
-trasformazione(n1, n2)
-cout<< n1<< "  "<< n2; 
-//n1 = 1, n2 = 0.666
+### Descrizione:
 
-Esercizio 1
+Scrivi una funzione che riceve due numeri reali:
 
-void Trapezio (int b, int l);
+- il minore dei due viene trasformato in `0` se è negativo o `1` se è positivo
+- il maggiore viene trasformato nel suo reciproco
 
-Descrizione: La funzione stampa un trapezio isoscele con b=base minore e l=lunghezza del lato obliquo.
+### Prototipo della funzione:
 
-Esempio (b=4, l=3)
+```cpp
+void transformation(float &n1, float &n2);
+```
+
+### Parametri:
+
+- `n1`: primo numero
+- `n2`: secondo numero
+
+### Valore di ritorno:
+
+Nessuno (passaggio per riferimento)
+
+### Esempio:
+
+```cpp
+float a = 0.7, b = 1.5;
+transformation(a, b);
+cout << a << " " << b;
+// Output: 1 0.666...
+```
+
+-----
+
+## 14 - Trapezio isoscele
+
+### Descrizione:
+
+Scrivi una funzione che stampa un trapezio isoscele con `b` come base minore e `l` come lunghezza dei lati obliqui.
+
+### Prototipo della funzione:
+
+```cpp
+void trapezoid(int b, int l);
+```
+
+### Parametri:
+
+- `b`: base minore
+- `l`: lunghezza del lato obliquo
+
+### Valore di ritorno:
+
+Nessuno
+
+### Esempio:
+
+```cpp
+trapezoid(4, 3);
+```
+
+### Output:
 
 ```
    ____
@@ -344,48 +484,158 @@ Esempio (b=4, l=3)
 /________\
 ```
 
+-----
 
-Esercizio 5: Conta cifre
-Scrivi un programma che chieda all'utente di inserire un numero intero positivo e conti quante cifre ha.
-Esempio:
-. 12345 → Il programma stampa 5
-. 9 → Il programma stampa 1
-Suggerimento: usa un ciclo per dividere ripetutamente il numero per 10 finché non diventa 0.
+## 15 - Conta cifre
 
+### Descrizione:
 
-Esercizio 1: Scambio di due numeri (passaggio per riferimento)
-Scrivi una funzione scambia(int &a, int &b) che scambi i valori di due numeri interi passati per
-riferimento.
-Nel main(), fai inserire due numeri all'utente, richiama la funzione e stampa i valori scambiati.
-Esempio:
-Inserisci due numeri: 5 10
-Dopo lo scambio: 10 5
+Scrivi una funzione che riceve un numero intero positivo e ritorna il numero delle sue cifre.
 
+### Prototipo della funzione:
 
-Esercizio 5:
-scrivi una funzione che riceve per parametro un numero e ritorna la somma delle sue cifre
-prototipo: int sommaCifre(int n):
-parametri:
-n: numero di cui si vuole calcolare la somma delle cifre
-ritorno:
-la somma delle cifre del numero passato per parametro
-Esempio:
-int somma = sommaCifre(123)
-cout<< somma 
-// somma deve essere uguale a 6
+```cpp
+int countDigits(int n);
+```
 
-Esercizio 3
-Implementa la funzione:
-Int divisibile3(int n)
-Stampa tutti i numeri divisibili per 3 minori di n. Per capire se un numero è minore di 3 calcola la somma delle sue cifre e stabilisci se la somma è divisibile per 3. I numeri saranno sempre minori di 1000.
-Consiglio: usa la funzione che hai scritto per l'esercizio precedente
+### Parametri:
 
-Esercizio 3
-Implementare la funzione:
-void capsula(int n);
-La funzione deve stampare su
-schermo una capsula
-ottagonale di lato `n`.
+- `n`: numero da analizzare
+
+### Valore di ritorno:
+
+Numero delle cifre del numero
+
+### Esempio:
+
+```cpp
+int n1 = countDigits(12345);
+int n2 = countDigits(9);
+cout<< n1 << n2;
+//Output: 6 1
+```
+
+-----
+
+## 16 - Scambio di due numeri
+
+### Descrizione
+
+Scrivi una funzione che scambi i valori di due numeri interi passati per riferimento.
+
+### Prototipo della funzione
+
+```cpp
+void swap(int &a, int &b);
+```
+
+### Parametri
+
+- **a**: primo numero intero
+- **b**: secondo numero intero
+
+### Valore di ritorno
+
+Nessuno
+
+### Esempio
+
+```cpp
+int a = 5, b = 10;
+swap(a, b);
+cout << a << " " << b;
+// Output: 10 5
+```
+
+-----
+
+## 17 - Somma delle cifre
+
+### Descrizione
+
+Scrivi una funzione che riceve per parametro un numero intero positivo e restituisce la somma delle sue cifre.
+
+### Prototipo della funzione
+
+```cpp
+int sumDigits(int n);
+```
+
+### Parametri
+
+- **n**: numero intero positivo
+
+### Valore di ritorno
+
+La somma delle cifre del numero
+
+### Esempio
+
+```cpp
+int sum = sumDigits(123);
+cout << sum;
+// Output: 6
+```
+
+-----
+
+## 18 - Divisibili per 3
+
+### Descrizione
+
+Scrivi una funzione che stampi tutti i numeri minori di `n` le cui cifre sommate sono divisibili per 3.
+
+### Prototipo della funzione
+
+```cpp
+void divisible3(int n);
+```
+
+### Parametri
+
+- **n**: limite superiore (massimo 1000)
+
+### Valore di ritorno
+
+Nessuno
+
+### Esempio
+
+```cpp
+divisible3(10);
+// Output: 3 6 9
+```
+
+-----
+
+## 19 - Capsula ottagonale
+
+### Descrizione
+
+Scrivi una funzione che disegni una capsula ottagonale su schermo, data la dimensione `n`.
+
+### Prototipo della funzione
+
+```cpp
+void capsule(int n);
+```
+
+### Parametri
+
+- **n**: lato della capsula
+
+### Valore di ritorno
+
+Nessuno
+
+### Esempio
+
+```cpp
+capsule(3);
+```
+
+### Output:
+
 ```
    ___
   /   \
@@ -397,155 +647,476 @@ ottagonale di lato `n`.
 \       /
  \     /
   \___/
-   
 ```
 
-Esercizio 5: Decomposizione in fattori primi
-Scrivi una funzione che riceva per parametro un numero e ne stampa la serie dei fattori primi
-void fattoriPrimi(int n) 
-parametri:
-n: numero di cui si vuole calcolare la serie di fattori primi
-Esempio:
-fattoriPrimi( 28)
-output:
-2,2,7
+-----
 
-Esercizio 6
-Implementare la funzione:
-void sommaFrazioni(int numeratore1, int denominatore1, int numeratore2, int
-denominatore2, int &numeratoreR, int &denominatoreR);
-Questa funzione riceve quattro interi rappresentanti i numeratori e i denominatori di due
-frazioni e calcola la loro somma.
+## 20 - Decomposizione in fattori primi
 
-Esercizio 8
-Implementare la funzione:
-void fattorePrimo(int n, int &divisore, int &molteplicita);
-Questa funzione riceve un numero intero `n` e restituisce il suo più grande fattore primo e la
-sua molteplicità.
+### Descrizione
 
-Esercizio 1
-Implementare la funzione:
-int inverti(int i);
-La funzione accetta come parametro un numero intero non negativo e restituisce il numero
-ottenuto invertendo le cifre della sua rappresentazione in base dieci. Ad esempio, dato il
-numero `123`, la funzione deve restituire `321`.
+Scrivi una funzione che riceve un numero intero e ne stampa i fattori primi.
 
+### Prototipo della funzione
 
-Esercizio 6: Verifica di un numero Palindromo
-Scrivi un programma che chieda all'utente di inserire un numero intero positivo e verifichi se il numero è un Palindromo (ovvero se si legge uguale da sinistra a destra e da destra a sinistra).
-Ad esempio:
-. 12321 è Palindromo perché si legge allo stesso modo da entrambi i lati.
-. 12345 non è Palindromo.
-Il programma deve stampare se il numero è Palindromo o meno.
-consiglio: usa la funzione che hai scritto nell'esercizio precedente;
+```cpp
+void primeFactorization(int n);
+```
 
-11 - casuale
-Implementare la funzione:
-int casuale(int minimo, int massimo);
-ritorna un intero casuale tra minimo e massimo compresi
+### Parametri
 
-Esercizio 5
+- **n**: numero da scomporre
 
-int pino(int n1, int n2);
+### Valore di ritorno
 
-Descrizione: La funzione chiede all’utente 10 tabelline casuali diverse. Se l’utente le fa tutte giuste, stampa "Bravissimo". Se l’utente fa un massimo di 13 tentativi, la funzione stampa “Bravo”, altrimenti stampa “ALLENATI!”.
+Nessuno
 
-Esempio (n1, n2)
+### Esempio
 
+```cpp
+primeFactorization(28);
+// Output: 2 2 7
+```
+
+-----
+
+## 21 - Somma di frazioni
+
+### Descrizione
+
+Scrivi una funzione che somma due frazioni e restituisce il risultato nei parametri passati per riferimento.
+
+### Prototipo della funzione
+
+```cpp
+void sumFractions(int numerator1, int denominator1, int numerator2, int denominator2, int &numeratorR, int &denominatorR);
+```
+
+### Parametri
+
+- **numerator1**: numeratore prima frazione
+- **denominator1**: denominatore prima frazione
+- **numerator2**: numeratore seconda frazione
+- **denominator2**: denominatore seconda frazione
+- **numeratorR**: numeratore del risultato
+- **denominatorR**: denominatore del risultato
+
+### Valore di ritorno
+
+Nessuno
+
+### Esempio
+
+```cpp
+int nr, dr;
+sumFractions(1, 2, 1, 3, nr, dr);
+cout<< nr << dr;
+// Output: 5 6
+```
+
+-----
+
+## 22 - Fattore primo più grande
+
+### Descrizione
+
+Scrivi una funzione che restituisce il più grande fattore primo di `n` e la sua molteplicità.
+
+### Prototipo della funzione
+
+```cpp
+void primeFactor(int n, int &factor, int &occurency);
+```
+
+### Parametri
+
+- **n**: numero da analizzare
+- **factor**: fattore primo più grande
+- **occurency**: quante volte il fattore divide `n`
+
+### Valore di ritorno
+
+Nessuno
+
+### Esempio
+
+```cpp
+int f, o;
+primeFactor(48, f, o);
+cout<< f << 0;
+// Output: 3 1
+```
+
+-----
+
+## 23 - Inverti numero
+
+### Descrizione
+
+Scrivi una funzione che riceve un numero intero positivo e restituisce il numero con le cifre invertite.
+
+### Prototipo della funzione
+
+```cpp
+int invert(int n);
+```
+
+### Parametri
+
+- **n**: numero da invertire
+
+### Valore di ritorno
+
+Il numero invertito
+
+### Esempio
+
+```cpp
+int inv = invert(123);
+cout<< inv;
+// Output: 321
+```
+
+-----
+
+## 24 - Verifica palindromo
+
+### Descrizione
+
+Scrivi una funzione che verifica se un numero è un palindromo (si legge uguale da sinistra a destra e viceversa).
+
+### Prototipo della funzione
+
+```cpp
+bool isPalindrome(int n);
+```
+
+### Parametri
+
+- **n**: numero da verificare
+
+### Valore di ritorno
+
+`true` se il numero è palindromo, `false` altrimenti
+
+### Esempio
+
+```cpp
+bool p = isPalindrome(12321);
+cout<< p;
+// Output: 1 (true)
+```
+
+-----
+
+## 25 - Numero casuale
+
+### Descrizione
+
+Scrivi una funzione che restituisce un numero intero casuale compreso tra `min` e `max`.
+
+### Prototipo della funzione
+
+```cpp
+int random(int min, int max);
+```
+
+### Parametri
+
+- **min**: valore minimo
+- **max**: valore massimo
+
+### Valore di ritorno
+
+Un intero casuale nell'intervallo dato
+
+### Esempio
+
+```cpp
+int n = random(1, 10);
+cout<< n;
+// Output: un valore tra 1 e 10
+```
+
+-----
+
+## 26 - Tabelline
+
+### Descrizione:
+
+Scrivi una funzione che chiede all’utente di risolvere 10 tabelline casuali. Ogni risposta errata conta come tentativo. Se l’utente completa l'esercizio facendo:
+
+* meno di 3 errori: stampa `Very good`
+* dai 4 ai 10 errori: stampa `good`
+* più di 10 errori: stampa `Train more!`
+
+### Prototipo della funzione:
+
+```cpp
+int tables(int n1, int n2);
+```
+
+### Parametri:
+
+* `n1`: primo numero massimo per generare le tabelline
+* `n2`: secondo numero massimo per generare le tabelline
+
+### Valore di ritorno:
+
+Nessuno
+
+### Esempio:
+
+```cpp
+tables(10, 10);
+```
+
+### Output:
+
+```
 Scrivi il prodotto tra 2 e 8: 16
 Scrivi il prodotto tra 6 e 1: 5
 Riprova: 4
 Riprova: 4
 Riprova: 4
 Riprova: 6
-Scrivi il prodotto tra 3 e 10: 30
-Scrivi il prodotto tra 6 e 3: 18
-Scrivi il prodotto tra 5 e 10: 50
-Scrivi il prodotto tra 2 e 9: 18
-Scrivi il prodotto tra 2 e 6: 12
-Scrivi il prodotto tra 8 e 5: 40
-Scrivi il prodotto tra 5 e 1: 5
-Scrivi il prodotto tra 1 e 10: 10
-ALLENATI!
+...
+Train more!
+```
 
-Esercizio 4
-Cenni di probabilità
+-----
+
+## 27 - Probabilità
+
+### Cenni di probabilità
+
 Per calcolare la probabilità di un evento, bisogna contare il numero di volte in cui l’evento si verifica e dividerlo per il numero totale di esperimenti.
-Esempio pratico:
-Supponiamo di voler calcolare la probabilità di segnare un canestro con un tiro da tre punti. Se eseguiamo 100 tiri e realizziamo 45 canestri, la probabilità sarà:
-45/100 = 0.45
-Compito:
-Scrivi un programma che stimi la probabilità di ottenere un numero divisibile per 3 lanciando un dado.
-•	Crea una funzione che simuli il lancio di un dado generando un numero casuale tra 1 e n.
-•	Scrivi una seconda funzione che calcoli la probabilità stimata lanciando il dado 100 000 volte.
-•	Usa un dado a 6 facce.
-Prototipi delle funzioni:
-int tiroDado(int n);  
-double probabilita(int n);  
-Dove n rappresenta il numero di facce del dado.
-________________________________________
 
+**Esempio pratico:** Supponiamo di voler calcolare la probabilità di segnare un canestro con un tiro da tre punti. Se eseguiamo 100 tiri e realizziamo 45 canestri, la probabilità sarà: 45/100 = 0.45
 
-Esercizio 6 (Facoltativo, consigliato se siete interessati alla probabilita’)
-Se decidi di fare questo esercizio scrivimi una email cosi ne parliamo in classe finita la lezione.
-Probabilità condizionata
+### Descrizione:
+
+Scrivi un programma che stimi la probabilità di ottenere un numero divisibile per 3 lanciando un dado. Crea una funzione che simuli il lancio di un dado generando un numero casuale tra 1 e n. Scrivi una seconda funzione che calcoli la probabilità stimata lanciando il dado 100 000 volte.
+
+### Prototipo delle funzioni:
+
+```cpp
+int rollDice(int n);
+double Probability(int n);
+```
+
+### Parametri:
+
+* `n`: numero di facce del dado (es. 6)
+
+### Valore di ritorno:
+
+* `rollDice()`: ritorna un numero casuale tra 1 e `n`
+* `Probability()`: ritorna la probabilità stimata
+
+### Esempio:
+
+```cpp
+cout << Probability(6);
+// Output: 0.333...
+cout << Probability(8);
+// Output: 0.25
+```
+
+-----
+
+## 28 - Probabilità congiunta condizionata
+
+### Probabilità condizionata
+
 Per calcolare la probabilità che due eventi A e B si verifichino contemporaneamente, si moltiplica la probabilità di A dato che B è accaduto per la probabilità di B.
+```
 P(A∩B)=P(A∣B)⋅P(B)
-Esempio pratico:
-In una classe di 20 studenti, ci sono 12 maschi e 8 femmine. Vogliamo calcolare la probabilità di selezionare casualmente uno studente maschio con i capelli neri. Supponiamo che metà dei maschi abbia i capelli neri.
-•	Probabilità di avere i capelli neri dato che lo studente scelto è maschio:
-meta’ => ½ = 0.5
-•	Probabilità di scegliere un maschio:
-12/20 = 3/5
-•	Probabilità di selezionare un maschio con i capelli neri:
-0.5 * 3/5 = 3/10
-Compito:
-Scrivi un programma che calcoli la probabilità di ottenere un numero dispari superiore a 3 lanciando un dado.
-•	Determina la probabilità di ottenere un numero maggiore di 3.
-•	Determina la probabilità che il numero ottenuto sia dispari tra quelli compresi tra 4 e 6.
-•	Moltiplica queste probabilità per ottenere la probabilità complessiva.
-•	Usa un dado a 6 facce e stima la probabilità eseguendo 200 lanci.
+```
 
+**Esempio pratico:** In una classe di 20 studenti, ci sono 12 maschi e 8 femmine. Vogliamo calcolare la probabilità di selezionare casualmente uno studente maschio con i capelli neri. Supponiamo che metà dei maschi abbia i capelli neri.
 
+- Probabilità di avere i capelli neri dato che lo studente scelto è maschio: metà =\> ½ = 0.5
+- Probabilità di scegliere un maschio: 12/20 = 3/5
+- Probabilità di selezionare un maschio con i capelli neri: 0.5 \* 3/5 = 3/10
 
-✅ Esercizio 3 — Risiko: confronto tra dadi
-void risiko(int d11, int d12, int d13, int d21, int d22, int d23, int &c1persi, int &c2persi);
-Descrizione: Simula un singolo round di combattimento in Risiko.
-Il giocatore 1 (attaccante) lancia 1-3 dadi: d11, d12, d13.
-Il giocatore 2 (difensore) lancia 1-3 dadi: d21, d22, d23.
-I dadi non utilizzati hanno valore 0.
-La funzione confronta i dadi (dopo averli ordinati in ordine decrescente) e aggiorna i riferimenti c1persi e c2persi con le perdite subite da ciascun giocatore.
-________________________________________
+### Descrizione:
 
+Calcola la probabilità di ottenere un numero dispari maggiore di 3 lanciando un dado a 6 facce. **Suggerimento:** Calcola la probabilita' di ottenere un numero maggiore di 3 e di ottenere un numero dispari generando un numero casuale tra 4-5-6. Poi usa la definizione di probabilita condizionata per calcolare la probabilita' richiesta.
 
+### Prototipo della funzione:
 
-✅ Esercizio 3bis — Risiko: simulazione battaglia completa
-int risiko(int c1, int c2);
-Descrizione: Simula una battaglia completa in Risiko tra l’attaccante (giocatore 1) e il difensore (giocatore 2).
-La battaglia continua finché:
-•	il giocatore 1 ha più di 1 carroarmato;
-•	oppure finché il giocatore 2 ha ancora carri armati.
-Restituisce:
-•	1 se l’attaccante vince,
-•	2 se il difensore resiste.
+```cpp
+double jointProbability();
+```
 
-Esercizio 9
-Implementare la funzione:
-int Tokyo(int g1d1, int g1d2, int g2d1, int g2d2);
-Questa funzione implementa le regole del gioco "Tokyo" e restituisce `1` se vince il giocatore
-1, `2` se vince il giocatore 2.
-Tokyo (gioco) - Wikipedia
+### Parametri:
 
-Esercizio 9 Bis
-Implementare la funzione:
-int roundTokyo(int valoreMassimo);
-Questa funzione simula un round del gioco "Tokyo". Il parametro `valoreMassimo` indica il
-numero massimo presente sulle facce dei dadi (es. 6, 12, 20). La funzione deve generare
-casualmente i valori dei dadi e restituire il numero del giocatore vincente.
+Nessuno
 
-Esercizio 9 tris (Molto difficile, contattatemi se non e’ chiaro)
-Implementare la funzione:
-int roundTokyoMultiplayer(int valoreMassimo, int idg1, int idg2);
-Simula una reale round di tokio, chiedendo ai giocatoi di decidere se bleffare e di poter
-credere o no all’avversario. int idg1, int idg2 sono gli identificatori dei giocatori, a tirare per
-primo i dadi e’ sempre il g1. A giocare alla partita sono solo 2 giocatori. 
+### Valore di ritorno:
+
+Restituisce la probabilità stimata.
+
+### Esempio:
+
+```cpp
+cout<< jointProbability();
+// Output: Probabilità: 0.166...
+```
+
+-----
+
+## 29 - Risiko: confronto tra dadi
+
+### Descrizione:
+
+Simula un round di Risiko tra attaccante e difensore, confrontando fino a 3 dadi per parte.
+
+### Prototipo della funzione:
+
+```cpp
+void riskRound(int d11, int d12, int d13, int d21, int d22, int d23, int &p1lost, int &p2lost);
+```
+
+### Parametri:
+
+* `d11, d12, d13`: dadi del giocatore 1 (attaccante, i dadi non sono in ordine)
+* `d21, d22, d23`: dadi del giocatore 2 (difensore, i dadi non sono in ordine)
+* `p1lost`: carri persi dal giocatore 1 (output)
+* `p2lost`: carri persi dal giocatore 2 (output)
+
+### Valore di ritorno:
+
+Nessuno
+
+### Esempio:
+
+```cpp
+int p1 = 0, p2 = 0;
+riskRound(1, 5, 5, 4, 3, 1, p1, p2);
+cout<< p1 << p2
+// output: 1 2
+```
+
+-----
+
+## 30 - Risiko: simulazione battaglia completa
+
+### Descrizione:
+
+Simula un'intera battaglia in Risiko finché uno dei due giocatori non ha più carri. Il valore dei dadi deve essere generato casualmente (dadi a 6 facce).
+
+### Prototipo della funzione:
+
+```cpp
+int risk(int p1, int p2);
+```
+
+### Parametri:
+
+* `p1`: carri del giocatore 1
+* `p2`: carri del giocatore 2
+
+### Valore di ritorno:
+
+* `1` se vince il giocatore 1
+* `2` se vince il giocatore 2
+
+### Esempio:
+
+```cpp
+int vincitore = risk(10, 5);
+```
+
+-----
+
+## 31 - Tokio: calcola il vincitore
+
+### Descrizione:
+
+Simula un round del gioco Tokio e restituisce il vincitore in base ai punteggi.
+
+### Prototipo della funzione:
+
+```cpp
+int Tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
+```
+
+### Parametri:
+
+* `p1d1`, `p1d2`: dadi giocatore 1
+* `p2d1`, `p2d2`: dadi giocatore 2
+
+### Valore di ritorno:
+
+* `1` se vince il giocatore 1
+* `2` se vince il giocatore 2
+
+### Esempio:
+
+```cpp
+int winner = Tokyo(6, 3, 4, 2);
+cout<< winner
+//output: 1
+```
+
+-----
+
+## 32 - Tokio: singolo round
+
+### Descrizione:
+
+Simula un round casuale del gioco Tokio con valore dei dati generato casualmente fino a `max`.
+
+### Prototipo della funzione:
+
+```cpp
+int roundTokyo(int max);
+```
+
+### Parametri:
+
+* `max`: massimo valore sulle facce dei dadi
+
+### Valore di ritorno:
+
+* `1` o `2` a seconda del vincitore
+
+### Esempio:
+
+```cpp
+int winner = roundTokyo(6);
+cout<< winner;
+//output: 1 or 2 depending which player won
+```
+
+-----
+
+## 33 - Tokio: round completo multiplayer
+
+### Descrizione:
+
+Simula un round realistico di Tokyo con bluff tra due giocatori. Il giocatore 1 inizia sempre. **Consiglio:** modifica la funzione dell'esercizio precedente consentendo al giocatore di bleffare sul valore dei dati dopo che sono stati generati e all'avversario di accettare o rifiutare i dadi.
+
+### Prototipo della funzione:
+
+```cpp
+int completeTokyoRound(int max);
+```
+
+### Parametri:
+
+* `max`: massimo valore dei dadi
+
+### Valore di ritorno:
+
+* `1` o `2` a seconda del vincitore
+
+### Esempio:
+
+```cpp
+int winner = completeTokyoRound(6);
+cout<< winner
+//output: 1 o 2 a seconda di quale giocatore ha vinto
+```
