@@ -42,8 +42,8 @@ asteriskRectangle(3, 4);
 
 ### Description
 
-Write a function that calculates the power of an integer raised to a positive exponent.
-
+Write a function that calculates the power of an integer raised to a positive exponent. Don't use Pow.
+Both the base and the exponent must be positive; otherwise, the function should return ```-1```
 ### Function Prototype
 
 ```cpp
@@ -62,7 +62,7 @@ int exponentiation(int base, int exponent);
 ### Example
 
 ```cpp
-exponentiation(2, 4);
+cout<< exponentiation(2, 4);
 ```
 
 ### Output:
@@ -271,7 +271,7 @@ printSigma(5);
 
 -----
 
-## 09 - Calculation of the greatest common divisor (GCD) (pass by value and reference)
+## 09 - Calculation of the greatest common divisor (GCD) 
 
 ### Description:
 Write a function `int gcd(int a, int b)` that calculates the greatest common divisor using the Euclidean algorithm.

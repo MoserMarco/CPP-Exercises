@@ -42,8 +42,8 @@ asteriskRectangle(3, 4);
 
 ### Descrizione
 
-Scrivi una funzione che calcoli la potenza di un numero intero elevato a un esponente positivo.
-
+Scrivi una funzione che calcoli la potenza di un numero intero elevato a un esponente positivo. Non usare pow
+La base e l'esponente devono essere entrambi positivi, in caso contrario la funzione deve ritornare ```-1```
 ### Prototipo della funzione
 
 ```cpp
@@ -62,7 +62,7 @@ int exponentiation(int base, int exponent);
 ### Esempio
 
 ```cpp
-exponentiation(2, 4);
+cout<< exponentiation(2, 4);
 ```
 
 ### Output:
