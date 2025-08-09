@@ -78,4 +78,21 @@ public:
     }
 };
 
+class BoolReturnComparison : public ComparisonStrategy {
+public:
+    bool compare(const void* a, const void* b) const override {
+        return *(const bool*)a == *(const bool*)b;
+    }
+
+    void print(const void* a, const void* b, size_t, const std::string& label) const override {
+        bool valA = *(const bool*)a;
+        bool valB = *(const bool*)b;
+        bool result = (valA == valB);
+
+        std::cout << label << ": "
+                  << (valA ? "True" : "False") << " vs "
+                  << (valB ? "True" : "False")
+                  << " -> " << (result ? "OK" : "DIFFERENT") << "\n";
+    }
+};
 #endif //COMPARISONSTRATEGY_H

@@ -29,6 +29,7 @@ l'utente inserisce la base e l'altezza, il programma calcola l'area e il perimet
 L'utente inserisce il prezzo di un prodotto e lo sconto in percentuale, il programma verifica che lo sconto sia accettabile (compreso tra 1 e 99).
 Se lo sconto e corretto calcola il prezzo del prodotto applicando lo sconto, se lo sconto non e' corretto stampa: ```Inseriemento dello sconto errato```
 
+---
 
 ## 07 – Numeri Speciali 
 L’utente inserisce un numero **X**. Il programma deve controllare le seguenti condizioni:

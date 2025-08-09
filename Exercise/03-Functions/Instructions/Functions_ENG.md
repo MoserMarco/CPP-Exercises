@@ -62,13 +62,7 @@ int exponentiation(int base, int exponent);
 ### Example
 
 ```cpp
-cout<< exponentiation(2, 4);
-```
-
-### Output:
-
-```
-16
+exponentiation(2, 4);  // returns 16
 ```
 
 -----
@@ -96,8 +90,8 @@ bool isEven(int n);
 ### Example:
 
 ```cpp
-cout<< isEven(7);
-//output: 0 (false)
+isEven(7);  // returns 0 (False)
+isEven(4);  // returns 1 (True)
 ```
 
 -----
@@ -127,8 +121,8 @@ int difference(int n1, int n2, int n3);
 ### Example
 
 ```cpp
-cout<< difference(6, 12, 2);
-//output: 10
+difference(6, 12, 2);  // returns 10
+
 ```
 
 
@@ -141,7 +135,7 @@ cout<< difference(6, 12, 2);
 ### Description:
 
 The function checks if `n` is less than or equal to or greater than 10. If `n <= 10`, it prints all numbers from `1` to `n-1`, with a newline every two numbers. If `n > 10`, it prints all numbers from `1` to `n-1`, with a newline every ten numbers.
-
+`n` must be greater than 1.
 ### Function Prototype:
 
 ```cpp
@@ -160,6 +154,8 @@ void numbersWithNewlines(int n);
 
 ```cpp
 numbersWithNewlines(10)
+numbersWithNewlines(15)
+numbersWithNewlines(1)
 ```
 ### Output:
 ```
@@ -168,6 +164,10 @@ numbersWithNewlines(10)
 5 6
 7 8
 9
+1 2 3 4 5 6 7 8 9 10
+11 12 13 14 
+n must be greater than 1.
+
 ```
 
 -----
@@ -227,9 +227,8 @@ bool isPrime(int n);
 ### Example:
 
 ```cpp
-bool result = isPrime(28);
-cout<< result
-// result = 0 (False)
+isPrime(28); // returns 0 (False)
+isPrime(73); // returns 1 (True)
 ```
 
 -----
@@ -238,7 +237,7 @@ cout<< result
 
 ### Description:
 Write a function that prints an uppercase Sigma (Σ) with height and width `n`.
-`n` must be odd and greater than 5.
+`n` must be odd and greater than or equal to 5.
 
 ### Function Prototype:
 
@@ -250,13 +249,14 @@ void printSigma(int n);
 
 - `n`: dimension (height and width) of the Sigma
 
-**Return Value:
+### Return Value:
 None
 
 ### Example:
 
 ```cpp
 printSigma(5);
+printSigma(6);
 ```
 
 ### Output:
@@ -267,6 +267,7 @@ printSigma(5);
   *
  *
 *****
+n must be odd and greater than 5.
 ```
 
 -----
@@ -274,12 +275,12 @@ printSigma(5);
 ## 09 - Calculation of the greatest common divisor (GCD) 
 
 ### Description:
-Write a function `int gcd(int a, int b)` that calculates the greatest common divisor using the Euclidean algorithm.
+Write a function `int GCD(int a, int b)` that calculates the greatest common divisor using the Euclidean algorithm.
 
 ### Function Prototype:
 
 ```cpp
-int gcd(int a, int b);
+int GCD(int a, int b);
 ```
 
 ### Parameters:
@@ -295,10 +296,7 @@ int gcd(int a, int b);
 ### Example:
 
 ```cpp
-
-int gcdVariable =  gcd(48, 18);
-cout << gcdVariable
-// output: 6
+GCD(48, 18); // returns 6
 ```
 
 -----

@@ -62,13 +62,7 @@ int exponentiation(int base, int exponent);
 ### Esempio
 
 ```cpp
-cout<< exponentiation(2, 4);
-```
-
-### Output:
-
-```
-16
+exponentiation(2, 4);  //ritorna 16
 ```
 
 -----
@@ -97,8 +91,9 @@ bool isEven(int n);
 ### Esempio:
 
 ```cpp
-cout<< isEven(7);
-//output: 0 (false)
+isEven(7); // ritorna 0 (Falso)
+isEven(4); // ritorna 1 (Vero)
+
 ```
 
 -----
@@ -128,8 +123,7 @@ int difference(int n1, int n2, int n3);
 ### Esempio
 
 ```cpp
-cout<< difference(6, 12, 2);
-//output: 10
+difference(6, 12, 2);  //ritorna 10
 ```
 
 
@@ -141,7 +135,7 @@ cout<< difference(6, 12, 2);
 ### Descrizione:
 
 La funzione controlla se `n` è minore o uguale o maggiore di 10. Se `n <= 10`, stampa tutti i numeri da `1` a `n-1` andando a capo ogni due numeri. Se `n > 10`, stampa tutti i numeri da `1` a `n-1` andando a capo ogni dieci numeri.
-
+`n` deve essere maggiore di 1
 ### Prototipo della funzione:
 
 ```cpp
@@ -160,16 +154,20 @@ void numbersWithNewlines(int n);
 
 ```cpp
 numbersWithNewlines(10)
+numbersWithNewlines(15)
+numbersWithNewlines(1)
 ```
-
 ### Output:
-
 ```
 1 2
 3 4
 5 6
 7 8
 9
+1 2 3 4 5 6 7 8 9 10
+11 12 13 14 
+n must be greater than 1.
+
 ```
 
 -----
@@ -200,7 +198,7 @@ Restituisce il perimetro del triangolo.
 ### Esempio:
 
 ```cpp
-perimeter(0, 0, 3, 0, 0, 4) // returns 12
+perimeter(0, 0, 3, 0, 0, 4) // ritorna 12
 ```
 
 -----
@@ -229,9 +227,8 @@ bool isPrime(int n);
 ### Esempio:
 
 ```cpp
-bool result = isPrime(28);
-cout<< result
-// result = 0 (False)
+isPrime(28); // ritorna 0 (Falso)
+isPrime(73); // ritorna 1 (Vero)
 ```
 
 -----
@@ -259,6 +256,7 @@ Nessuno
 
 ```cpp
 printSigma(5);
+printSigma(6);
 ```
 
 ### Output:
@@ -269,6 +267,7 @@ printSigma(5);
   *
  *
 *****
+n must be odd and greater than 5.
 ```
 
 -----
@@ -277,7 +276,7 @@ printSigma(5);
 
 ### Descrizione:
 
-Scrivi una funzione `int gcd(int a, int b)` che calcoli il massimo comune divisore usando l'algoritmo di Euclide.
+Scrivi una funzione `int GCD(int a, int b)` che calcoli il massimo comune divisore usando l'algoritmo di Euclide.
 
 ### Prototipo della funzione:
 
@@ -297,9 +296,7 @@ int GCD(int a, int b);
 ### Esempio:
 
 ```cpp
-int gcdVariable =  GCD(48, 18);
-cout << gcdVariable
-// output: 6
+GCD(48, 18); // ritorna 6
 ```
 
 -----
@@ -332,7 +329,7 @@ int LCM(int a, int b);
 ### Esempio:
 
 ```cpp
-LCM(4, 6) // returns 12
+LCM(4, 6) // ritorna 12
 ```
 
 -----

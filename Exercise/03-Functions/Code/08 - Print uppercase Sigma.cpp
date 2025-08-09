@@ -1,0 +1,3 @@
+void printSigma(int n) {
+
+}
