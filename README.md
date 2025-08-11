@@ -87,5 +87,5 @@ To contribute:
 `C++` `programming` `education` `high-school` `exercises` `loops` `functions` `pointers` `arrays`
 
 ---
-**Happy coding! 🚀**
+**Happy coding!**
 
