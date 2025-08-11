@@ -1,4 +1,4 @@
-# 📚 CPP-Exercise
+# 📚 CPP-Exercises
 
 [![Made with C++](https://img.shields.io/badge/Made%20with-C%2B%2B-blue.svg)](https://isocpp.org/)
 [![Educational](https://img.shields.io/badge/Purpose-Educational-orange)](#)
@@ -42,8 +42,8 @@ Each topic folder contains:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/MoserMarco/CPP-Exercise.git
-   cd cpp-exercise
+   git clone https://github.com/MoserMarco/CPP-Exercises.git
+   cd cpp-exercises
    ```
 
 2. **Open a topic folder** and read the instructions in `/Instruction`.
