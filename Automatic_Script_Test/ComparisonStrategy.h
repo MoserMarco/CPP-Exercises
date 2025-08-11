@@ -1,7 +1,3 @@
-//
-// Created by admin on 06-Aug-25.
-//
-
 #ifndef COMPARISONSTRATEGY_H
 #define COMPARISONSTRATEGY_H
 
@@ -19,7 +15,7 @@ public:
         std::cout << label << " " << index << ": ";
         std::cout << (result ? "OK" : "DIFFERENT") << " ";
     }
-
+    virtual void cleanup(void* ptr) const = 0; // per deallocare
     virtual ~ComparisonStrategy() {}
 };
 
@@ -31,15 +27,15 @@ public:
     bool compare(const void* a, const void* b) const override {
         return *(const int*)a == *(const int*)b;
     }
-
     void print(const void* a, const void* b, size_t index, const std::string& label) const override {
         int valA = *(const int*)a;
         int valB = *(const int*)b;
-        bool result = (valA == valB);
-
         std::cout << label << " " << index << ": "
                   << valA << " vs " << valB
-                  << " -> " << (result ? "OK" : "DIFFERENT") << "\n";
+                  << " -> " << (valA == valB ? "OK" : "DIFFERENT") << "\n";
+    }
+    void cleanup(void* ptr) const override {
+        delete static_cast<int*>(ptr);
     }
 };
 
@@ -49,32 +45,33 @@ public:
     bool compare(const void* a, const void* b) const override {
         return *(int*)a == *(int*)b;
     }
-
     void print(const void* a, const void* b, size_t index, const std::string& label) const override {
         int valA = *(int*)a;
         int valB = *(int*)b;
-        bool result = (valA == valB);
-
         std::cout << label << " " << index << ": "
                   << valA << " vs " << valB
-                  << " -> " << (result ? "OK" : "DIFFERENT") << "\n";
+                  << " -> " << (valA == valB ? "OK" : "DIFFERENT") << "\n";
+    }
+    void cleanup(void* ptr) const override {
+        delete static_cast<int*>(ptr);
     }
 };
+
 // Compare two int return values directly
 class IntReturnComparison : public ComparisonStrategy {
 public:
     bool compare(const void* a, const void* b) const override {
         return *(int*)a == *(int*)b;
     }
-
     void print(const void* a, const void* b, size_t, const std::string& label) const override {
         int valA = *(int*)a;
         int valB = *(int*)b;
-        bool result = (valA == valB);
-
         std::cout << label << ": "
                   << valA << " vs " << valB
-                  << " -> " << (result ? "OK" : "DIFFERENT") << "\n";
+                  << " -> " << (valA == valB ? "OK" : "DIFFERENT") << "\n";
+    }
+    void cleanup(void* ptr) const override {
+        delete static_cast<int*>(ptr);
     }
 };
 
@@ -83,16 +80,62 @@ public:
     bool compare(const void* a, const void* b) const override {
         return *(const bool*)a == *(const bool*)b;
     }
-
     void print(const void* a, const void* b, size_t, const std::string& label) const override {
         bool valA = *(const bool*)a;
         bool valB = *(const bool*)b;
-        bool result = (valA == valB);
-
         std::cout << label << ": "
                   << (valA ? "True" : "False") << " vs "
                   << (valB ? "True" : "False")
-                  << " -> " << (result ? "OK" : "DIFFERENT") << "\n";
+                  << " -> " << (valA == valB ? "OK" : "DIFFERENT") << "\n";
+    }
+    void cleanup(void* ptr) const override {
+        delete static_cast<bool*>(ptr);
     }
 };
-#endif //COMPARISONSTRATEGY_H
+class DoubleReturnComparison : public ComparisonStrategy {
+public:
+    bool compare(const void* a, const void* b) const override {
+        double valA = *(const double*)a;
+        double valB = *(const double*)b;
+
+        // Tolleranza: 5% rispetto al valore maggiore tra i due (o valore assoluto minimo per evitare zero)
+        double tolerance = 0.05 * std::max(std::abs(valA), std::abs(valB));
+        return std::abs(valA - valB) <= tolerance;
+    }
+
+    void print(const void* a, const void* b, size_t, const std::string& label) const override {
+        double valA = *(const double*)a;
+        double valB = *(const double*)b;
+        bool ok = compare(a, b);
+        std::cout << label << ": " << valA << " vs " << valB
+                  << " -> " << (ok ? "OK" : "DIFFERENT") << "\n";
+    }
+
+    void cleanup(void* ptr) const override {
+        delete static_cast<double*>(ptr);
+    }
+};
+class DoubleValueComparison : public ComparisonStrategy {
+public:
+    bool compare(const void* a, const void* b) const override {
+        double valA = *(const double*)a;
+        double valB = *(const double*)b;
+        double tolerance = 0.01 * std::max(std::abs(valA), std::abs(valB));
+        return std::abs(valA - valB) <= tolerance;
+    }
+
+    void print(const void* a, const void* b, size_t index, const std::string& label) const override {
+        double valA = *(const double*)a;
+        double valB = *(const double*)b;
+        bool ok = compare(a, b);
+        std::cout << label << " " << index << ": "
+                  << valA << " vs " << valB
+                  << " -> " << (ok ? "OK" : "DIFFERENT") << "\n";
+    }
+
+    void cleanup(void* ptr) const override {
+        delete static_cast<double*>(ptr);
+    }
+};
+
+#endif // COMPARISONSTRATEGY_H
