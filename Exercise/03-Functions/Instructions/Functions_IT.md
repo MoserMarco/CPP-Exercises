@@ -42,7 +42,7 @@ asteriskRectangle(3, 4);
 
 ### Descrizione
 
-Scrivi una funzione che calcoli la potenza di un numero intero elevato a un esponente positivo. Non usare pow
+Scrivi una funzione che calcoli la potenza di un numero intero elevato a un esponente positivo. Non usare pow.
 La base e l'esponente devono essere entrambi positivi, in caso contrario la funzione deve ritornare ```-1```
 ### Prototipo della funzione
 
@@ -450,7 +450,7 @@ cout << a << " " << b;
 ### Descrizione:
 
 Scrivi una funzione che stampa un trapezio isoscele con `b` come base minore e `l` come lunghezza dei lati obliqui.
-
+`b` e `l` devono essere maggiori di 0
 ### Prototipo della funzione:
 
 ```cpp
@@ -470,6 +470,7 @@ Nessuno
 
 ```cpp
 trapezoid(4, 3);
+trapezoid(-1, 3);
 ```
 
 ### Output:
@@ -479,6 +480,7 @@ trapezoid(4, 3);
   /    \
  /      \
 /________\
+b and l must be greater than 0.
 ```
 
 -----
@@ -488,7 +490,7 @@ trapezoid(4, 3);
 ### Descrizione:
 
 Scrivi una funzione che riceve un numero intero positivo e ritorna il numero delle sue cifre.
-
+`Se `n` e' negativo la funzione deve ritornare -1;
 ### Prototipo della funzione:
 
 ```cpp
@@ -506,10 +508,9 @@ Numero delle cifre del numero
 ### Esempio:
 
 ```cpp
-int n1 = countDigits(12345);
-int n2 = countDigits(9);
-cout<< n1 << n2;
-//Output: 6 1
+countDigits(12345); // ritorna 6
+countDigits(9);  // ritorna 1
+countDigits(-2);  // ritorna -1
 ```
 
 -----
@@ -569,9 +570,8 @@ La somma delle cifre del numero
 ### Esempio
 
 ```cpp
-int sum = sumDigits(123);
-cout << sum;
-// Output: 6
+sumDigits(123); // ritorna 6
+
 ```
 
 -----
@@ -599,8 +599,8 @@ Nessuno
 ### Esempio
 
 ```cpp
-divisible3(10);
-// Output: 3 6 9
+divisible3(16);
+// Output: 3 6 9 12 15
 ```
 
 -----
@@ -610,7 +610,7 @@ divisible3(10);
 ### Descrizione
 
 Scrivi una funzione che disegni una capsula ottagonale su schermo, data la dimensione `n`.
-
+`n` deve essere maggiore di 0.
 ### Prototipo della funzione
 
 ```cpp
@@ -629,6 +629,7 @@ Nessuno
 
 ```cpp
 capsule(3);
+capsule(0);
 ```
 
 ### Output:
@@ -644,6 +645,7 @@ capsule(3);
 \       /
  \     /
   \___/
+n must be greater than 0.
 ```
 
 -----

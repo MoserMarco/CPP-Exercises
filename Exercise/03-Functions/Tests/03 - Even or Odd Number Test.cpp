@@ -1,65 +1,46 @@
-#include "../../../Automatic_Script_Test/TestCase.h"
+#include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
 #include "../Code/03 - Even or Odd Number.cpp"
 #include "../Solutions/03 - Even or Odd Number.cpp"
 
-struct parameters {
-    int n;
+struct parameters { int n; };
 
-};
+std::unique_ptr<UnifiedFunctionTester> createIsEvenTest(parameters params) {
+    int* n_dynamic = new int(params.n);
+    std::vector<void*> input_data = { n_dynamic };
 
-// Builds a test case with input parameters and return value
-TestCase createTest(struct parameters params) {
-    // Allocate input data dynamically
-    int* n = new int(params.n);
-
-
-    std::vector<void*> input_data = {
-        n
-    };
-
-    // Assignment strategies
     std::vector<std::unique_ptr<AssignmentStrategy>> assignment_strategies;
     assignment_strategies.push_back(std::make_unique<IntValueAssignment>());
 
-
-    // Comparison strategies
     std::vector<std::unique_ptr<ComparisonStrategy>> comparison_strategies;
     comparison_strategies.push_back(std::make_unique<IntValueComparison>());
 
-
-    // Return value strategy
     std::unique_ptr<ComparisonStrategy> return_strategy = std::make_unique<BoolReturnComparison>();
 
-    // Create test case
-    TestCase test(
+    return std::make_unique<UnifiedFunctionTester>(
         input_data,
         std::move(assignment_strategies),
         std::move(comparison_strategies),
-        // Student function
         [](std::vector<void*>& args) -> void* {
-            int result = isEven(*(int*)args[0]);
-            return new int(result);
+            bool result = isEven(*(int*)args[0]);
+            return new bool(result);
         },
-        // Solution function
         [](std::vector<void*>& args) -> void* {
-            int result = isEvenSol(*(int*)args[0]);
-            return new int(result);
+            bool result = isEvenSol(*(int*)args[0]);
+            return new bool(result);
         },
-        std::move(return_strategy)
+        std::move(return_strategy),
+        true, false, true
     );
-
-    return test;
 }
 
-// Runs all test cases for exponentiation
 void testEvenOrOdd() {
-    std::vector<TestCase> Tests;
-    Tests.push_back(createTest({2}));
-    Tests.push_back(createTest({1}));
-    Tests.push_back(createTest({4}));
-    Tests.push_back(createTest({71}));
-    Tests.push_back(createTest({3}));
-    runTests(Tests);
+    std::vector<std::unique_ptr<UnifiedFunctionTester>> tests;
+    tests.push_back(createIsEvenTest({2}));
+    tests.push_back(createIsEvenTest({1}));
+    tests.push_back(createIsEvenTest({4}));
+    tests.push_back(createIsEvenTest({0}));
+    tests.push_back(createIsEvenTest({71}));
+    runTests(tests);
 }
 
 int main() {

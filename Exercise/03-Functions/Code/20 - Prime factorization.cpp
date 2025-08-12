@@ -1,0 +1,3 @@
+void primeFactorization(int n) {
+
+}

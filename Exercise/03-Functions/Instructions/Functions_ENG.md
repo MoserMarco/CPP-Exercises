@@ -344,7 +344,7 @@ LCM(4, 6) // returns 12
 
 ### Description
 
-Write a function that prints an **uppercase M** given a height.
+Write a function that prints an **uppercase M** given a height. `height` must be odd and greater than or equal to 5.
 
 ### Function Prototype
 
@@ -364,6 +364,7 @@ None
 
 ```cpp
 printM(5);
+printM(8);
 ```
 
 ### Output:
@@ -374,6 +375,7 @@ printM(5);
 * * *
 *   *
 *   *
+height must be odd and greater than 5.
 ```
 
 -----
@@ -452,7 +454,7 @@ cout << a << " " << b;
 
 ### Description:
 Write a function that prints an isosceles trapezoid with `b` as the minor base and `l` as the length of the oblique sides.
-
+`b` and `l` must be greater than 0.
 ### Function Prototype:
 
 ```cpp
@@ -471,6 +473,7 @@ None
 
 ```cpp
 trapezoid(4, 3);
+trapezoid(-1, 3);
 ```
 
 ### Output:
@@ -480,6 +483,7 @@ trapezoid(4, 3);
   /    \
  /      \
 /________\
+b and l must be greater than 0.
 ```
 
 -----
@@ -488,7 +492,7 @@ trapezoid(4, 3);
 
 ### Description:
 Write a function that receives a positive integer and returns the number of its digits.
-
+If `n` is negative the function must return -1.
 ### Function Prototype:
 
 ```cpp
@@ -505,10 +509,10 @@ Number of digits of the number
 ### Example:
 
 ```cpp
-int n1 = countDigits(12345); 
-int n2 = countDigits(9);     
-cout<< n1 << n2;
-//Output: 6 1
+countDigits(12345); // returns 6
+countDigits(9);  // returns 1
+countDigits(-2);  // returns -1
+
 ```
 
 -----
@@ -550,7 +554,7 @@ cout << a << " " << b;
 ### Description
 
 Write a function that receives a positive integer as a parameter and returns the sum of its digits.
-
+If `n` is negative the function must return -1.
 ### Function Prototype
 
 ```cpp
@@ -568,9 +572,8 @@ The sum of the digits of the number
 ### Example
 
 ```cpp
-int sum = sumDigits(123);
-cout << sum;
-// Output: 6
+sumDigits(123); // returns 6
+
 ```
 
 -----
@@ -598,8 +601,8 @@ None
 ### Example
 
 ```cpp
-divisible3(10);
-// Output: 3 6 9
+divisible3(16);
+// Output: 3 6 9 12 15
 ```
 
 -----
@@ -609,7 +612,7 @@ divisible3(10);
 ### Description
 
 Write a function that draws an octagonal capsule on the screen, given the size `n`.
-
+`n`  must be greater than 0.
 ### Function Prototype
 
 ```cpp
@@ -628,6 +631,7 @@ None
 
 ```cpp
 capsule(3);
+capsule(0);
 ```
 
 ### Output:
@@ -642,7 +646,9 @@ capsule(3);
 |       |
 \       /
  \     /
-  \___/
+  \   /
+   ---
+n must be greater than 0.
 ```
 
 -----

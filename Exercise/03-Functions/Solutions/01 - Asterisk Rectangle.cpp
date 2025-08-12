@@ -2,6 +2,7 @@
 using namespace std;
 
 void asteriskRectangleSol(int base, int height) {
+
     string result;
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < base; j++) {

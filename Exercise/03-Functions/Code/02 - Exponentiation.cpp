@@ -1,3 +1,4 @@
-int exponentiation(int base, int exponent) {
 
+int exponentiation(int base, int exponent) {
+    return 0;
 }
