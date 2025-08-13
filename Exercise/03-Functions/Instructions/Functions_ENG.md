@@ -821,7 +821,7 @@ isPalindrome(34534); //returns 0 (false)
 
 ### Description
 
-Write a function that returns a random integer between `min` and `max`.
+Write a function that returns a random integer between `min` and `max`. If `max` is less then `min` the function must swap the variables
 
 ### Function Prototype
 
@@ -841,9 +841,8 @@ A random integer in the given range
 ### Example
 
 ```cpp
-int n = random(1, 10);
-cout<< n;
-// Output: a value between 1 and 10
+random(1, 10);  // returns a value between 1 and 10
+random(-6, 0);  // returns a value between -6 and 0
 ```
 
 -----
@@ -907,14 +906,14 @@ Let's say we want to calculate the probability of scoring a basket with a three-
 
 ### Description:
 
-Write a program that estimates the probability of getting a number divisible by 3 when rolling a die.
+Write a program that estimates the probability of getting a number divisible by 3 when rolling a die of `n` faces.
 Create a function that simulates rolling a die by generating a random number between 1 and n.
 Write a second function that calculates the estimated probability by rolling the die 100,000 times.
-
+If `n` is smaller than 1 the function must return -1.
 ### Function Prototypes:
 
 ```cpp
-int rollDice(int n);
+int rollDie(int n);
 double probability(int n);
 ```
 
@@ -924,16 +923,15 @@ double probability(int n);
 
 ### Return Value:
 
-* `rollDice()`: returns a random number between 1 and `n`
+* `rollDie()`: returns a random number between 1 and `n`
 * `probability()`: returns the estimated probability
 
 ### Example:
 
 ```cpp
-cout << probability(6);
-// Output: 0.333...
-cout << probability(8);
-// Output: 0.25
+probability(6); // returns 0.333333
+probability(8); // returns 0.25
+probability(0); // returns -1
 ```
 
 ---
@@ -957,16 +955,17 @@ In a class of 20 students, there are 12 males and 8 females. We want to calculat
   0.5 \* 3/5 = 3/10
 
 ### Description:
-Calculate the probability of getting an odd number greater than 3 when rolling a 6-sided die. **Hint:** Calculate the probability of getting a number greater than 3 and getting an odd number by generating a random number between 4-5-6. Then use the definition of conditional probability to calculate the required probability.
-
+Calculate the probability of getting an odd number greater than `t` when rolling a `n`-sided die . **Hint:** Calculate the probability of getting a number greater than `t` and getting an odd number by generating a random number between `t` and `n`. Then use the definition of conditional probability to calculate the required probability.
+If either `n` or `t` is less than 1, the function must return -1.
 ### Function Prototype:
 
 ```cpp
-double jointProbability();
+double jointProbability(int t, int n);
 ```
 
 ### Parameters:
-None
+* `t`: threshold value, only outcomes strictly greater than t are considered.
+* `n`: faces of the die
 
 ### Return Value:
 Return the estimated probability.
@@ -974,8 +973,9 @@ Return the estimated probability.
 ### Example:
 
 ```cpp
-cout<< jointProbability();
-// Output: Probability: 0.166...
+jointProbability(3,6); // returns 0.166
+jointProbability(14,10); // returns 0
+jointProbability(4,0); // returns -1
 ```
 
 -----
@@ -1025,18 +1025,17 @@ int risk(int p1, int p2);
 
 ### Parameters:
 
-* `p1`: tanks of player 1
-* `p2`: tanks of player 2
+* `p1`: tanks of player 1 (attacker)
+* `p2`: tanks of player 2 (defender)
 
 ### Return Value:
 
-* `1` if player 1 wins
-* `2` if player 2 wins
+* `1` or `2` depending on the winner
 
 ### Example:
 
 ```cpp
-int vincitore = risiko(10, 5);
+risk(10, 5); // retruns 1 or 2 depending which player won
 ```
 
 -----
@@ -1059,15 +1058,14 @@ int Tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
 
 ### Return Value:
 
-* `1` if player 1 wins
-* `2` if player 2 wins
+* `1` or `2` depending on the winner
 
 ### Example:
 
 ```cpp
-int winner = Tokyo(6, 3, 4, 2);
-cout<< winner 
-//output: 1
+Tokyo(6, 3, 4, 2);  // retruns 1 
+Tokyo(2, 2, 5, 6);  // retruns 1 
+
 ```
 
 -----
@@ -1075,7 +1073,7 @@ cout<< winner
 ## 32 - Tokyo: single round
 
 ### Description:
-Simulate a random round of the game Tokyo with dice values generated randomly up to `valoreMassimo`.
+Simulate a random round of the game Tokyo with dice values generated randomly up to `max`.
 
 ### Function Prototype:
 
@@ -1094,9 +1092,7 @@ int roundTokyo(int max);
 ### Example:
 
 ```cpp
-int winner = roundTokyo(6);
-cout<< winner;
-//output: 1 or 2 depending which player won
+roundTokyo(6); // returns 1 or 2 depending which player won
 ```
 
 -----
@@ -1123,7 +1119,5 @@ int completeTokyoRound(int max);
 ### Example:
 
 ```cpp
-int winner = completeTokyoRound(6);
-cout<< winner
-//output: 1 or 2 depending on which player won
+completeTokyoRound(6); // returns 1 or 2 depending which player won
 ```

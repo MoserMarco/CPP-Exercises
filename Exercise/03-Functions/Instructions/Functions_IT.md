@@ -818,7 +818,7 @@ isPalindrome(34534); //ritorna 0 (false)
 
 ### Descrizione
 
-Scrivi una funzione che restituisce un numero intero casuale compreso tra `min` e `max`.
+Scrivi una funzione che restituisce un numero intero casuale compreso tra `min` e `max`. se `max` e' minore di `min` la funzione deve scambiare le variabili
 
 ### Prototipo della funzione
 
@@ -838,9 +838,8 @@ Un intero casuale nell'intervallo dato
 ### Esempio
 
 ```cpp
-int n = random(1, 10);
-cout<< n;
-// Output: un valore tra 1 e 10
+random(1, 10);  // ritorna un valore compreso tra 1 e 10
+random(-6, 0);  // ritorna un valore compreso tra -6 e 0
 ```
 
 -----
@@ -901,12 +900,12 @@ Per calcolare la probabilità di un evento, bisogna contare il numero di volte i
 
 ### Descrizione:
 
-Scrivi un programma che stimi la probabilità di ottenere un numero divisibile per 3 lanciando un dado. Crea una funzione che simuli il lancio di un dado generando un numero casuale tra 1 e n. Scrivi una seconda funzione che calcoli la probabilità stimata lanciando il dado 100 000 volte.
-
+Scrivi un programma che stimi la probabilità di ottenere un numero divisibile per 3 lanciando un dado di `n` facce. Crea una funzione che simuli il lancio di un dado generando un numero casuale tra 1 e n. Scrivi una seconda funzione che calcoli la probabilità stimata lanciando il dado 100 000 volte.
+Se `n` e' minore di 1 la funzione deve ritornare -1.
 ### Prototipo delle funzioni:
 
 ```cpp
-int rollDice(int n);
+int rollDie(int n);
 double probability(int n);
 ```
 
@@ -916,16 +915,15 @@ double probability(int n);
 
 ### Valore di ritorno:
 
-* `rollDice()`: ritorna un numero casuale tra 1 e `n`
+* `rollDie()`: ritorna un numero casuale tra 1 e `n`
 * `probability()`: ritorna la probabilità stimata
 
 ### Esempio:
 
 ```cpp
-cout << probability(6);
-// Output: 0.333...
-cout << probability(8);
-// Output: 0.25
+probability(6); // returns 0.333333
+probability(8); // returns 0.25
+probability(0); // returns -1
 ```
 
 -----
@@ -947,7 +945,7 @@ P(A∩B)=P(A∣B)⋅P(B)
 
 ### Descrizione:
 
-Calcola la probabilità di ottenere un numero dispari maggiore di 3 lanciando un dado a 6 facce. **Suggerimento:** Calcola la probabilita' di ottenere un numero maggiore di 3 e di ottenere un numero dispari generando un numero casuale tra 4-5-6. Poi usa la definizione di probabilita condizionata per calcolare la probabilita' richiesta.
+Calcola la probabilità di ottenere un numero dispari maggiore di `t` lanciando un dado con `n` facce. **Suggerimento:** Calcola la probabilita' di ottenere un numero maggiore di `t` e di ottenere un numero dispari generando un numero casuale tra `t` e `n`. Poi usa la definizione di probabilita condizionata per calcolare la probabilita' richiesta.
 
 ### Prototipo della funzione:
 
@@ -957,7 +955,9 @@ double jointProbability();
 
 ### Parametri:
 
-Nessuno
+* `t`: valore soglia, si considerano solo i risultati strettamente maggiori di t.
+
+* `n`: numero totale di facce del dado.
 
 ### Valore di ritorno:
 
@@ -966,8 +966,9 @@ Restituisce la probabilità stimata.
 ### Esempio:
 
 ```cpp
-cout<< jointProbability();
-// Output: Probabilità: 0.166...
+jointProbability(3,6); // ritorna 0.166
+jointProbability(14,10); // ritorna 0
+jointProbability(4,0); // ritorna -1
 ```
 
 -----
@@ -1020,18 +1021,17 @@ int risk(int p1, int p2);
 
 ### Parametri:
 
-* `p1`: carri del giocatore 1
-* `p2`: carri del giocatore 2
+* `p1`: carri del giocatore 1 (attaccante)
+* `p2`: carri del giocatore 2 (difensore)
 
 ### Valore di ritorno:
 
-* `1` se vince il giocatore 1
-* `2` se vince il giocatore 2
+* `1` o `2` a seconda del vincitore
 
 ### Esempio:
 
 ```cpp
-int vincitore = risk(10, 5);
+risk(10, 5); // ritorna 1 o 2 a seconda di quale giocatore ha vinto
 ```
 
 -----
@@ -1055,15 +1055,13 @@ int Tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
 
 ### Valore di ritorno:
 
-* `1` se vince il giocatore 1
-* `2` se vince il giocatore 2
+* `1` o `2` a seconda del vincitore
 
 ### Esempio:
 
 ```cpp
-int winner = Tokyo(6, 3, 4, 2);
-cout<< winner
-//output: 1
+Tokyo(6, 3, 4, 2);  // ritorna 1 
+Tokyo(2, 2, 5, 6);  // ritorna 1 
 ```
 
 -----
@@ -1091,9 +1089,7 @@ int roundTokyo(int max);
 ### Esempio:
 
 ```cpp
-int winner = roundTokyo(6);
-cout<< winner;
-//output: 1 or 2 depending which player won
+roundTokyo(6); // ritorna 1 o 2 a seconda di quale giocatore ha vinto
 ```
 
 -----
@@ -1121,7 +1117,5 @@ int completeTokyoRound(int max);
 ### Esempio:
 
 ```cpp
-int winner = completeTokyoRound(6);
-cout<< winner
-//output: 1 o 2 a seconda di quale giocatore ha vinto
+completeTokyoRound(6); // ritorna 1 o 2 a seconda di quale giocatore ha vinto
 ```
