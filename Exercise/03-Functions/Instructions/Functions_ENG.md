@@ -639,7 +639,7 @@ capsule(0);
 ### Output:
 
 ```
-   ___
+   ---
   /   \
  /     \
 /       \
@@ -693,7 +693,6 @@ primeFactorization(1);
 ### Description
 
 Write a function that sums two fractions and returns the result in parameters passed by reference.
-
 ### Function Prototype
 
 ```cpp
@@ -729,7 +728,7 @@ cout<< nr << dr;
 ### Description
 
 Write a function that returns the largest prime factor of `n` and its multiplicity.
-
+If `n` is less than or equal to 1, the function must set `factor = -1` and `occurency = -1`.
 ### Function Prototype
 
 ```cpp
@@ -753,6 +752,9 @@ int f, o;
 primeFactor(48, f, o);
 cout<< f << o;
 // Output: 3 1
+primeFactor(1, f, o);
+cout<< f << o;
+// Output: -1 -1
 ```
 
 -----
@@ -780,9 +782,8 @@ The inverted number
 ### Example
 
 ```cpp
-int inv = inverti(123);
-cout<< inv;
-// Output: 321
+invert(123); // returns 321
+invert(-6798); // returns -8976
 ```
 
 -----
@@ -810,9 +811,8 @@ bool isPalindrome(int n);
 ### Example
 
 ```cpp
-bool p = isPalindrome(12321);
-cout<< p;
-// Output: 1 (true)
+isPalindrome(-12321); //returns 1 (true)
+isPalindrome(34534); //returns 0 (false)
 ```
 
 -----
@@ -861,7 +861,7 @@ Write a function that asks the user to solve 10 random multiplication tables. Ea
 ### Function Prototype:
 
 ```cpp
-int tables(int n1, int n2);
+void tables(int n1, int n2);
 ```
 
 ### Parameters:
@@ -884,8 +884,8 @@ tables(10, 10);
 Write the product between 2 and 8: 16
 Write the product between 6 and 1: 5
 Retry: 4
-Retry: 4
-Retry: 4
+Retry: 2
+Retry: 8
 Retry: 6
 ...
 Train more!
@@ -915,7 +915,7 @@ Write a second function that calculates the estimated probability by rolling the
 
 ```cpp
 int rollDice(int n);
-double Probability(int n);
+double probability(int n);
 ```
 
 ### Parameters:
@@ -925,14 +925,14 @@ double Probability(int n);
 ### Return Value:
 
 * `rollDice()`: returns a random number between 1 and `n`
-* `Probability()`: returns the estimated probability
+* `probability()`: returns the estimated probability
 
 ### Example:
 
 ```cpp
-cout << Probability(6);
+cout << probability(6);
 // Output: 0.333...
-cout << Probability(8);
+cout << probability(8);
 // Output: 0.25
 ```
 

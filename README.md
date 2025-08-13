@@ -6,7 +6,7 @@
 ---
 
 ## 📖 About the Project
-From **January 2025** to **February 2025**, I worked as a **Computer Science teacher** in a high school.  
+From **January 2025** to **June 2025**, I worked as a **Computer Science teacher** in a high school.  
 I taught **C++** to second-year students (aged **15–16**).  
 The course started from the basics and progressed through topics up to **arrays**.
 

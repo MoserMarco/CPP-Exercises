@@ -637,7 +637,7 @@ capsule(0);
 ### Output:
 
 ```
-   ___
+   ---
   /   \
  /     \
 /       \
@@ -646,7 +646,8 @@ capsule(0);
 |       |
 \       /
  \     /
-  \___/
+  \   /
+   ---
 n must be greater than 0.
 ```
 
@@ -724,7 +725,7 @@ cout<< nr << dr;
 ### Descrizione
 
 Scrivi una funzione che restituisce il più grande fattore primo di `n` e la sua molteplicità.
-
+Se `n` e' minore uguale a 1 la funzione deve impostare `factor= -1` e `occurency= -1`.
 ### Prototipo della funzione
 
 ```cpp
@@ -748,6 +749,9 @@ int f, o;
 primeFactor(48, f, o);
 cout<< f << 0;
 // Output: 3 1
+primeFactor(1, f, o);
+cout<< f << 0;
+// Output: -1 -1
 ```
 
 -----
@@ -757,7 +761,6 @@ cout<< f << 0;
 ### Descrizione
 
 Scrivi una funzione che riceve un numero intero positivo e restituisce il numero con le cifre invertite.
-
 ### Prototipo della funzione
 
 ```cpp
@@ -775,9 +778,8 @@ Il numero invertito
 ### Esempio
 
 ```cpp
-int inv = invert(123);
-cout<< inv;
-// Output: 321
+invert(123); // ritorna 321
+invert(-6798); // ritorna -8976
 ```
 
 -----
@@ -805,9 +807,9 @@ bool isPalindrome(int n);
 ### Esempio
 
 ```cpp
-bool p = isPalindrome(12321);
-cout<< p;
-// Output: 1 (true)
+isPalindrome(-12321); //ritorna 1 (true)
+isPalindrome(34534); //ritorna 0 (false)
+
 ```
 
 -----
@@ -856,7 +858,7 @@ Scrivi una funzione che chiede all’utente di risolvere 10 tabelline casuali. O
 ### Prototipo della funzione:
 
 ```cpp
-int tables(int n1, int n2);
+void tables(int n1, int n2);
 ```
 
 ### Parametri:
@@ -877,12 +879,12 @@ tables(10, 10);
 ### Output:
 
 ```
-Scrivi il prodotto tra 2 e 8: 16
-Scrivi il prodotto tra 6 e 1: 5
-Riprova: 4
-Riprova: 4
-Riprova: 4
-Riprova: 6
+Write the product between 2 and 8: 16
+Write the product between 6 and 1: 5
+Retry: 4
+Retry: 2
+Retry: 8
+Retry: 6
 ...
 Train more!
 ```
@@ -905,7 +907,7 @@ Scrivi un programma che stimi la probabilità di ottenere un numero divisibile p
 
 ```cpp
 int rollDice(int n);
-double Probability(int n);
+double probability(int n);
 ```
 
 ### Parametri:
@@ -915,14 +917,14 @@ double Probability(int n);
 ### Valore di ritorno:
 
 * `rollDice()`: ritorna un numero casuale tra 1 e `n`
-* `Probability()`: ritorna la probabilità stimata
+* `probability()`: ritorna la probabilità stimata
 
 ### Esempio:
 
 ```cpp
-cout << Probability(6);
+cout << probability(6);
 // Output: 0.333...
-cout << Probability(8);
+cout << probability(8);
 // Output: 0.25
 ```
 
