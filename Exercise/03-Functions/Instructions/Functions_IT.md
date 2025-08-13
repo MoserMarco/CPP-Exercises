@@ -552,7 +552,7 @@ cout << a << " " << b;
 ### Descrizione
 
 Scrivi una funzione che riceve per parametro un numero intero positivo e restituisce la somma delle sue cifre.
-
+Se `n` e' negativo la funzione deve ritornare `-1`.
 ### Prototipo della funzione
 
 ```cpp
@@ -581,7 +581,7 @@ sumDigits(123); // ritorna 6
 ### Descrizione
 
 Scrivi una funzione che stampi tutti i numeri minori di `n` le cui cifre sommate sono divisibili per 3.
-
+`n` deve essere maggiore uguale di 0.
 ### Prototipo della funzione
 
 ```cpp
@@ -600,6 +600,8 @@ Nessuno
 
 ```cpp
 divisible3(16);
+// Output: 3 6 9 12 15
+divisible3(-2);
 // Output: 3 6 9 12 15
 ```
 
@@ -655,7 +657,7 @@ n must be greater than 0.
 ### Descrizione
 
 Scrivi una funzione che riceve un numero intero e ne stampa i fattori primi.
-
+`n` deve essere maggiore di 1.
 ### Prototipo della funzione
 
 ```cpp
@@ -675,6 +677,8 @@ Nessuno
 ```cpp
 primeFactorization(28);
 // Output: 2 2 7
+primeFactorization(1);
+// Output: n  must be greater than 1.
 ```
 
 -----

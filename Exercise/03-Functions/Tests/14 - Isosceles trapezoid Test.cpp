@@ -1,17 +1,17 @@
-#include "../Code/08 - Print uppercase Sigma.cpp"
-#include "../Solutions/08 - Print uppercase Sigma.cpp"
+#include "../Code/14 - Isosceles trapezoid.cpp"
+#include "../Solutions/14 - Isosceles trapezoid.cpp"
 #include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
 
     struct parameters {
-        int n;
-
+        int b;
+        int l;
     };
 
-std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct parameters params) {
-    int* n_dynamic = new int(params.n);
+std::unique_ptr<UnifiedFunctionTester> createIsoscelesTrapezoidTest(struct parameters params) {
+    int* b_dynamic = new int(params.b);
+    int* l_dynamic = new int(params.l);
 
-
-    std::vector<void*> input_data = { n_dynamic };
+    std::vector<void*> input_data = { b_dynamic, l_dynamic };
 
     std::vector<std::unique_ptr<AssignmentStrategy>> assignment_strategies;
     assignment_strategies.push_back(std::make_unique<IntValueAssignment>());
@@ -27,11 +27,11 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
         std::move(assignment_strategies),
         std::move(comparison_strategies),
         [](std::vector<void*>& args) -> void* {
-            printSigma(*(int*)args[0]);
+            trapezoid(*(int*)args[0], *(int*)args[1]);
             return nullptr;
         },
         [](std::vector<void*>& args) -> void* {
-            printSigmaSol(*(int*)args[0]);
+            trapezoidSol(*(int*)args[0], *(int*)args[1]);
             return nullptr;
         },
          nullptr,
@@ -39,13 +39,13 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
     );
 }
 
-void testPrintUppercaseSigma() {
+void testIsoscelesTrapezoid() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> Tests;
-    Tests.push_back(createPrintUppercaseSigmaTest({5}));
-    Tests.push_back(createPrintUppercaseSigmaTest({3}));
-    Tests.push_back(createPrintUppercaseSigmaTest({13}));
-    Tests.push_back(createPrintUppercaseSigmaTest({7}));
-    Tests.push_back(createPrintUppercaseSigmaTest({8}));
+    Tests.push_back(createIsoscelesTrapezoidTest({5, 3}));
+    Tests.push_back(createIsoscelesTrapezoidTest({0, 2}));
+    Tests.push_back(createIsoscelesTrapezoidTest({8, 4}));
+    Tests.push_back(createIsoscelesTrapezoidTest({3, 0}));
+    Tests.push_back(createIsoscelesTrapezoidTest({2, 9}));
 
     runTests(Tests);
 }
@@ -55,6 +55,6 @@ void testPrintUppercaseSigma() {
 
 
 int main() {
-    testPrintUppercaseSigma();
+    testIsoscelesTrapezoid();
     return 0;
 }

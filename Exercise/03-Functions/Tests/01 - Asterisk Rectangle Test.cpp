@@ -7,7 +7,7 @@
         int height;
     };
 
-    std::unique_ptr<UnifiedFunctionTester> createTest(struct parameters params) {
+    std::unique_ptr<UnifiedFunctionTester> createAsteriskRectangleTest(struct parameters params) {
         int* base_dynamic = new int(params.base);
         int* height_dynamic = new int(params.height);
 
@@ -41,11 +41,11 @@
 
     void testAsteriskRetangle() {
         std::vector<std::unique_ptr<UnifiedFunctionTester>> Tests;
-        Tests.push_back(createTest({5, 3}));
-        Tests.push_back(createTest({7, 2}));
-        Tests.push_back(createTest({8, 4}));
-        Tests.push_back(createTest({3, 3}));
-        Tests.push_back(createTest({2, 9}));
+        Tests.push_back(createAsteriskRectangleTest({5, 3}));
+        Tests.push_back(createAsteriskRectangleTest({7, 2}));
+        Tests.push_back(createAsteriskRectangleTest({8, 4}));
+        Tests.push_back(createAsteriskRectangleTest({3, 3}));
+        Tests.push_back(createAsteriskRectangleTest({2, 9}));
 
         runTests(Tests);
     }

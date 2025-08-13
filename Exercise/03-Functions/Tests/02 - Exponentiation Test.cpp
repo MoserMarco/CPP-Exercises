@@ -7,7 +7,7 @@ struct parameters {
     int exponent;
 };
 
-std::unique_ptr<UnifiedFunctionTester> createTest(struct parameters params) {
+std::unique_ptr<UnifiedFunctionTester> createExponentiationTest(struct parameters params) {
     int* base_dynamic = new int(params.base);
     int* exp_dynamic = new int(params.exponent);
 
@@ -42,11 +42,11 @@ std::unique_ptr<UnifiedFunctionTester> createTest(struct parameters params) {
 
 void testExponentiation() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> Tests;
-    Tests.push_back(createTest({2, 4}));
-    Tests.push_back(createTest({1, 0}));
-    Tests.push_back(createTest({4, -3}));
-    Tests.push_back(createTest({-2, 3}));
-    Tests.push_back(createTest({3, -1}));
+    Tests.push_back(createExponentiationTest({2, 4}));
+    Tests.push_back(createExponentiationTest({1, 0}));
+    Tests.push_back(createExponentiationTest({4, -3}));
+    Tests.push_back(createExponentiationTest({-2, 3}));
+    Tests.push_back(createExponentiationTest({3, -1}));
 
     runTests(Tests);
 }

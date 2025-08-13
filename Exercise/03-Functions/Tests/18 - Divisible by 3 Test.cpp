@@ -1,11 +1,12 @@
 #include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
-#include "../Code/07 - Prime number with a function.cpp"
-#include "../Solutions/07 - Prime number with a function.cpp"
+#include "../Code/18 - Divisible by 3.cpp"
+#include "../Solutions/18 - Divisible by 3.cpp"
 
 struct parameters { int n; };
 
-std::unique_ptr<UnifiedFunctionTester> createIsPimeTest(parameters params) {
+std::unique_ptr<UnifiedFunctionTester> createDivisibleBy3Test(parameters params) {
     int* n_dynamic = new int(params.n);
+
     std::vector<void*> input_data = { n_dynamic };
 
     std::vector<std::unique_ptr<AssignmentStrategy>> assignment_strategies;
@@ -14,36 +15,35 @@ std::unique_ptr<UnifiedFunctionTester> createIsPimeTest(parameters params) {
     std::vector<std::unique_ptr<ComparisonStrategy>> comparison_strategies;
     comparison_strategies.push_back(std::make_unique<IntValueComparison>());
 
-    std::unique_ptr<ComparisonStrategy> return_strategy = std::make_unique<BoolReturnComparison>();
+    std::unique_ptr<ComparisonStrategy> return_strategy = std::make_unique<IntReturnComparison>();
 
     return std::make_unique<UnifiedFunctionTester>(
         input_data,
         std::move(assignment_strategies),
         std::move(comparison_strategies),
         [](std::vector<void*>& args) -> void* {
-            bool result = isPrime(*(int*)args[0]);
-            return new bool(result);
+            divisible3(*(int*)args[0]);
+            return nullptr;
         },
         [](std::vector<void*>& args) -> void* {
-            bool result = isPrimeSol(*(int*)args[0]);
-            return new bool(result);
+            divisible3Sol(*(int*)args[0]);
+            return nullptr;
         },
-        std::move(return_strategy),
-        true, false, true
+        nullptr,
+        true, true, false
     );
 }
 
-void testIsPime() {
+void testDivisibleBy3() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> tests;
-    tests.push_back(createIsPimeTest({1}));
-    tests.push_back(createIsPimeTest({2}));
-    tests.push_back(createIsPimeTest({4}));
-    tests.push_back(createIsPimeTest({997}));
-    tests.push_back(createIsPimeTest({7150}));
+    tests.push_back(createDivisibleBy3Test({-4}));
+    tests.push_back(createDivisibleBy3Test({15}));
+    tests.push_back(createDivisibleBy3Test({0}));
+    tests.push_back(createDivisibleBy3Test({50}));
+    tests.push_back(createDivisibleBy3Test({7}));
     runTests(tests);
 }
-
 int main() {
-    testIsPime();
+    testDivisibleBy3();
     return 0;
 }

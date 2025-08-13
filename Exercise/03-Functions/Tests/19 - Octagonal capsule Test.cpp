@@ -1,5 +1,5 @@
-#include "../Code/08 - Print uppercase Sigma.cpp"
-#include "../Solutions/08 - Print uppercase Sigma.cpp"
+#include "../Code/19 - Octagonal capsule.cpp"
+#include "../Solutions/19 - Octagonal capsule.cpp"
 #include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
 
     struct parameters {
@@ -7,7 +7,7 @@
 
     };
 
-std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct parameters params) {
+std::unique_ptr<UnifiedFunctionTester> createOcatagonalCapsuleTest(struct parameters params) {
     int* n_dynamic = new int(params.n);
 
 
@@ -27,11 +27,11 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
         std::move(assignment_strategies),
         std::move(comparison_strategies),
         [](std::vector<void*>& args) -> void* {
-            printSigma(*(int*)args[0]);
+            capsule(*(int*)args[0]);
             return nullptr;
         },
         [](std::vector<void*>& args) -> void* {
-            printSigmaSol(*(int*)args[0]);
+            capsuleSol(*(int*)args[0]);
             return nullptr;
         },
          nullptr,
@@ -39,13 +39,13 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
     );
 }
 
-void testPrintUppercaseSigma() {
+void testOcatagonalCapsule() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> Tests;
-    Tests.push_back(createPrintUppercaseSigmaTest({5}));
-    Tests.push_back(createPrintUppercaseSigmaTest({3}));
-    Tests.push_back(createPrintUppercaseSigmaTest({13}));
-    Tests.push_back(createPrintUppercaseSigmaTest({7}));
-    Tests.push_back(createPrintUppercaseSigmaTest({8}));
+    Tests.push_back(createOcatagonalCapsuleTest({0}));
+    Tests.push_back(createOcatagonalCapsuleTest({1}));
+    Tests.push_back(createOcatagonalCapsuleTest({4}));
+    Tests.push_back(createOcatagonalCapsuleTest({7}));
+    Tests.push_back(createOcatagonalCapsuleTest({2}));
 
     runTests(Tests);
 }
@@ -55,6 +55,6 @@ void testPrintUppercaseSigma() {
 
 
 int main() {
-    testPrintUppercaseSigma();
+    testOcatagonalCapsule();
     return 0;
 }

@@ -1,11 +1,12 @@
 #include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
-#include "../Code/07 - Prime number with a function.cpp"
-#include "../Solutions/07 - Prime number with a function.cpp"
+#include "../Code/12 - Multiplication table.cpp"
+#include "../Solutions/12 - Multiplication table.cpp"
 
 struct parameters { int n; };
 
-std::unique_ptr<UnifiedFunctionTester> createIsPimeTest(parameters params) {
+std::unique_ptr<UnifiedFunctionTester> createMultiplicationTableTest(parameters params) {
     int* n_dynamic = new int(params.n);
+
     std::vector<void*> input_data = { n_dynamic };
 
     std::vector<std::unique_ptr<AssignmentStrategy>> assignment_strategies;
@@ -14,36 +15,35 @@ std::unique_ptr<UnifiedFunctionTester> createIsPimeTest(parameters params) {
     std::vector<std::unique_ptr<ComparisonStrategy>> comparison_strategies;
     comparison_strategies.push_back(std::make_unique<IntValueComparison>());
 
-    std::unique_ptr<ComparisonStrategy> return_strategy = std::make_unique<BoolReturnComparison>();
+    std::unique_ptr<ComparisonStrategy> return_strategy = std::make_unique<IntReturnComparison>();
 
     return std::make_unique<UnifiedFunctionTester>(
         input_data,
         std::move(assignment_strategies),
         std::move(comparison_strategies),
         [](std::vector<void*>& args) -> void* {
-            bool result = isPrime(*(int*)args[0]);
-            return new bool(result);
+            int result = multiplicatioTable(*(int*)args[0]);
+            return new int(result);
         },
         [](std::vector<void*>& args) -> void* {
-            bool result = isPrimeSol(*(int*)args[0]);
-            return new bool(result);
+            int result = multiplicatioTableSol(*(int*)args[0]);
+            return new int(result);
         },
         std::move(return_strategy),
-        true, false, true
+        true, true, true
     );
 }
 
-void testIsPime() {
+void testMultiplicationTable() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> tests;
-    tests.push_back(createIsPimeTest({1}));
-    tests.push_back(createIsPimeTest({2}));
-    tests.push_back(createIsPimeTest({4}));
-    tests.push_back(createIsPimeTest({997}));
-    tests.push_back(createIsPimeTest({7150}));
+    tests.push_back(createMultiplicationTableTest({5}));
+    tests.push_back(createMultiplicationTableTest({11}));
+    tests.push_back(createMultiplicationTableTest({0}));
+    tests.push_back(createMultiplicationTableTest({3}));
+    tests.push_back(createMultiplicationTableTest({1}));
     runTests(tests);
 }
-
 int main() {
-    testIsPime();
+    testMultiplicationTable();
     return 0;
 }

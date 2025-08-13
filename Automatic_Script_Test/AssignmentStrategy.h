@@ -39,6 +39,18 @@ public:
     }
 };
 
+// Pass-by-value float
+class FloatValueAssignment : public AssignmentStrategy {
+public:
+    void assign(void** dest, const void* src) const override {
+        *dest = new float(*(const float*)src);
+    }
+    void cleanup(void* ptr) const override {
+        delete static_cast<float*>(ptr);
+    }
+};
+
+// Pass-by-value double
 class DoubleValueAssignment : public AssignmentStrategy {
 public:
     void assign(void** dest, const void* src) const override {
@@ -48,5 +60,8 @@ public:
         delete static_cast<double*>(ptr);
     }
 };
+
+
+
 
 #endif // ASSIGNMENTSTRATEGY_H

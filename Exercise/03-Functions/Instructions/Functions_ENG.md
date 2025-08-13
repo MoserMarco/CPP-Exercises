@@ -554,7 +554,7 @@ cout << a << " " << b;
 ### Description
 
 Write a function that receives a positive integer as a parameter and returns the sum of its digits.
-If `n` is negative the function must return -1.
+If `n` is negative the function must return `-1`.
 ### Function Prototype
 
 ```cpp
@@ -583,7 +583,7 @@ sumDigits(123); // returns 6
 ### Description
 
 Write a function that prints all numbers less than `n` whose digits sum up to a number divisible by 3.
-
+`n`  must be greater than or equal to 0.
 ### Function Prototype
 
 ```cpp
@@ -603,6 +603,8 @@ None
 ```cpp
 divisible3(16);
 // Output: 3 6 9 12 15
+divisible3(-2);
+// Output: n  must be greater than or equal to 0.
 ```
 
 -----
@@ -658,7 +660,7 @@ n must be greater than 0.
 ### Description
 
 Write a function that receives an integer and prints its prime factors.
-
+`n`  must be greater than 1.
 ### Function Prototype
 
 ```cpp
@@ -678,6 +680,10 @@ None
 ```cpp
 primeFactorization(28);
 // Output: 2 2 7
+primeFactorization(1);
+// Output: n  must be greater than 1.
+
+
 ```
 
 -----

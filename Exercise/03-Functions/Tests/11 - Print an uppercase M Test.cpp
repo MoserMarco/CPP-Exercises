@@ -1,17 +1,17 @@
-#include "../Code/08 - Print uppercase Sigma.cpp"
-#include "../Solutions/08 - Print uppercase Sigma.cpp"
+#include "../Code/11 - Print an uppercase M.cpp"
+#include "../Solutions/11 - Print an uppercase M.cpp"
 #include "../../../Automatic_Script_Test/UnifiedFunctionTester.h"
 
     struct parameters {
-        int n;
+        int height;
 
     };
 
-std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct parameters params) {
-    int* n_dynamic = new int(params.n);
+std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseMTest(struct parameters params) {
+    int* height_dynamic = new int(params.height);
 
 
-    std::vector<void*> input_data = { n_dynamic };
+    std::vector<void*> input_data = { height_dynamic };
 
     std::vector<std::unique_ptr<AssignmentStrategy>> assignment_strategies;
     assignment_strategies.push_back(std::make_unique<IntValueAssignment>());
@@ -27,11 +27,11 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
         std::move(assignment_strategies),
         std::move(comparison_strategies),
         [](std::vector<void*>& args) -> void* {
-            printSigma(*(int*)args[0]);
+            printM(*(int*)args[0]);
             return nullptr;
         },
         [](std::vector<void*>& args) -> void* {
-            printSigmaSol(*(int*)args[0]);
+            printMSol(*(int*)args[0]);
             return nullptr;
         },
          nullptr,
@@ -39,13 +39,13 @@ std::unique_ptr<UnifiedFunctionTester> createPrintUppercaseSigmaTest(struct para
     );
 }
 
-void testPrintUppercaseSigma() {
+void testPrintUppercaseM() {
     std::vector<std::unique_ptr<UnifiedFunctionTester>> Tests;
-    Tests.push_back(createPrintUppercaseSigmaTest({5}));
-    Tests.push_back(createPrintUppercaseSigmaTest({3}));
-    Tests.push_back(createPrintUppercaseSigmaTest({13}));
-    Tests.push_back(createPrintUppercaseSigmaTest({7}));
-    Tests.push_back(createPrintUppercaseSigmaTest({8}));
+    Tests.push_back(createPrintUppercaseMTest({5}));
+    Tests.push_back(createPrintUppercaseMTest({3}));
+    Tests.push_back(createPrintUppercaseMTest({13}));
+    Tests.push_back(createPrintUppercaseMTest({7}));
+    Tests.push_back(createPrintUppercaseMTest({8}));
 
     runTests(Tests);
 }
@@ -55,6 +55,6 @@ void testPrintUppercaseSigma() {
 
 
 int main() {
-    testPrintUppercaseSigma();
+    testPrintUppercaseM();
     return 0;
 }
