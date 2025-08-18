@@ -2,7 +2,7 @@
 #include "25 - Random number.cpp"
 
 // Simulate a complete Risk battle
-int risk(int p1, int p2) {
+int riskSol(int p1, int p2) {
     while (p1 > 1 && p2 > 0) {
         int d11, d12, d13;
         int d21, d22, d23;

@@ -10,7 +10,7 @@ void sortThreeDice(int &a, int &b, int &c) {
 }
 
 // Simulates one round of Risk comparing up to 3 dice per player
-void riskRound(int d11, int d12, int d13,
+void riskRoundSol(int d11, int d12, int d13,
                int d21, int d22, int d23,
                int &p1lost, int &p2lost) {
 

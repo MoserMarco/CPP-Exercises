@@ -1045,7 +1045,7 @@ Simula un round del gioco Tokio e restituisce il vincitore in base ai punteggi.
 ### Prototipo della funzione:
 
 ```cpp
-int Tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
+int tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
 ```
 
 ### Parametri:
@@ -1060,8 +1060,8 @@ int Tokyo(int p1d1, int p1d2, int p2d1, int p2d2);
 ### Esempio:
 
 ```cpp
-Tokyo(6, 3, 4, 2);  // ritorna 1 
-Tokyo(2, 2, 5, 6);  // ritorna 1 
+tokyo(6, 3, 4, 2);  // ritorna 1 
+tokyo(2, 2, 5, 6);  // ritorna 1 
 ```
 
 -----

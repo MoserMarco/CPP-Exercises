@@ -7,7 +7,7 @@ int rollDie(int n) {
     return rand() % (n) + 1;
 }
 
-double probability(int n) {
+double probabilitySol(int n) {
     if (n < 1) return -1;
     int trials = 100000;
     int countDivisible = 0;

@@ -28,7 +28,7 @@ int countOddGreater(int t, int n, int trials) {
     return rit;
 }
 
-double jointProbability(int t, int n) {
+double jointProbabilitySol(int t, int n) {
     if (n < 1 || t < 1) return -1;
     if (t >= n) return 0;
 
@@ -40,9 +40,3 @@ double jointProbability(int t, int n) {
     return pA_given_B * pB;
 }
 
-int main() {
-    srand(time(0));
-    cout << jointProbability(3, 6) << endl;
-    cout << jointProbability(14, 10) << endl;
-    cout << jointProbability(4, 0) << endl;
-}

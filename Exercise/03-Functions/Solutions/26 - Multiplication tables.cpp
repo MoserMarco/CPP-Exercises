@@ -6,7 +6,7 @@ using namespace std;
 
 
 // Asks the user to solve 10 multiplication problems
-void tables(int n1, int n2) {
+void tablesSol(int n1, int n2) {
     int errors = 0;
     for (int i = 0; i < 10; i++) {
         int a = randomNumberSol(1, n1);  //generates the factors
