@@ -6,8 +6,8 @@ using namespace std;
 void printDice(int d1,int d2,int  p) {
     cout<< "Player" <<p << "'s dice: "<< d1 << ", " << d2 << endl;
 }
-int roundTokyo(int max) {
-    srand(time(0));
+int roundTokyoSol(int max) {
+
     int p1d1 = randomNumberSol(1,max);
     int p1d2 = randomNumberSol(1,max);
     int p2d1, p2d2;
@@ -23,7 +23,6 @@ int roundTokyo(int max) {
         printDice(p2d1,p2d2,(counter+1)%2+1);
 
         winner = tokyoSol(p1d1,p1d2,p2d1,p2d2);
-        cout<< winner << endl;
         p1d1 = p2d1;
         p1d2 = p2d2;
     }

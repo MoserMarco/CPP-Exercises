@@ -1074,7 +1074,7 @@ tokyo(2, 2, 5, 6);  // retruns 1
 
 ### Description:
 Simulate a round of the game Tokyo with dice values generated randomly up to `max`.
-
+The players roll the dice alternately, and the game continues until one of them rolls a worse result than the other; at that point, the player with the worse roll loses, and the opponent wins.
 ### Function Prototype:
 
 ```cpp

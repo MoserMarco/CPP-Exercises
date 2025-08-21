@@ -9,6 +9,8 @@ int tokyoSol(int p1d1, int p1d2, int p2d1, int p2d2) {
         if (p2d1+p2d2==3)
             return 2;
         return 1;
+    }else if (p2d1+p2d2==3) {
+        return 2;
     }
 
     bool p1double = (p1d1 == p1d2);

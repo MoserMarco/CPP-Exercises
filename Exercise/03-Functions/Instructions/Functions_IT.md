@@ -1071,7 +1071,7 @@ tokyo(2, 2, 5, 6);  // ritorna 1
 ### Descrizione:
 
 Simula un round casuale del gioco Tokio con valore dei dati generato casualmente fino a `max`.
-
+I giocatori tirano i dadi in modo alternato e la partita continua finché uno dei due ottiene un tiro peggiore dell’avversario; a quel punto quel giocatore perde e l’avversario vince.
 ### Prototipo della funzione:
 
 ```cpp

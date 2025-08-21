@@ -21,6 +21,7 @@ int completeTokyoRoundSol(int max) {
         printDice(d1,d2,counter%2+1);
         cout << "Player "<<counter%2+1<<", declare your dice values: ";
         cin >> decl1 >> decl2;
+        cout<< "Player" <<counter%2+1 << "'s declered dice: "<< decl1 << ", " << decl2 << endl;
         cout << "Player "<<(counter+1)%2+1<<", do you accept dice values? (yes/no)";
         cin >> answare;
         while (answare != "no" and answare != "yes") {
